@@ -9,29 +9,30 @@
   <link rel="canonical" href="https://palforgeit.com/services/compliance" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
   <style>
     :root {
       --blue: #114EA1; --blue-mid: #3E79B2;
       --ink: #08090B; --ink2: #0f1117; --ink3: #161b26;
       --rule: rgba(186,192,198,0.1); --rule2: rgba(186,192,198,0.18);
       --white: #F4F5F7; --muted: #7A8394; --light: #B0BBC8;
-      --font-head: 'Cormorant Garamond', serif;
-      --font-body: 'Roboto', sans-serif;
+      --font: 'Plus Jakarta Sans', sans-serif;
+      
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { background: var(--ink); color: var(--white); font-family: var(--font-body); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+    body { background: var(--ink); color: var(--white); font-family: var(--font); font-size: 16px; line-height: 1.7; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
     .section { padding: 96px 0; }
     .section--alt { background: var(--ink2); }
     a { color: inherit; text-decoration: none; }
-    .eyebrow { font-family: var(--font-body); font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue-mid); display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .eyebrow { font-family: var(--font); font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue-mid); display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
     .eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--blue-mid); }
-    .display { font-family: var(--font-head); font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 600; line-height: 1.05; letter-spacing: -0.01em; }
+    .display { font-family: var(--font); font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 600; line-height: 1.05; letter-spacing: -0.01em; }
     .display em { font-style: italic; color: var(--blue-mid); }
-    .body-large { font-size: 1.05rem; color: var(--light); line-height: 1.8; font-weight: 300; }
-    .btn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-body); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 15px 32px; cursor: pointer; border: none; transition: all 0.22s ease; }
+    .body-large { font-size: 1.05rem; color: var(--offwhite); line-height: 1.8; font-weight: 300; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 15px 32px; cursor: pointer; border: none; transition: all 0.22s ease; }
     .btn-primary { background: var(--blue); color: #fff; }
     .btn-primary:hover { background: var(--blue-mid); transform: translateY(-1px); }
     .btn-ghost { background: transparent; color: var(--white); border: 1px solid var(--rule2); }
@@ -48,7 +49,7 @@
     .nav-toggle span { display: block; width: 22px; height: 1px; background: var(--white); margin: 6px 0; }
     .mobile-menu { display: none; position: fixed; inset: 0; z-index: 99; background: var(--ink); padding: 96px 40px 40px; flex-direction: column; }
     .mobile-menu.open { display: flex; }
-    .mobile-menu a { font-family: var(--font-head); font-size: 2rem; font-weight: 600; color: var(--white); padding: 18px 0; border-bottom: 1px solid var(--rule); }
+    .mobile-menu a { font-family: var(--font); font-size: 2rem; font-weight: 600; color: var(--white); padding: 18px 0; border-bottom: 1px solid var(--rule); }
     .mobile-menu a:last-child { color: var(--blue-mid); border-bottom: none; margin-top: 16px; }
     .page-hero { padding: 160px 0 96px; background: linear-gradient(160deg, #08090B 0%, #0c1220 55%, #08090B 100%); border-bottom: 1px solid var(--rule); position: relative; overflow: hidden; }
     .page-hero-line { position: absolute; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent, var(--rule2) 25%, var(--rule2) 75%, transparent); }
@@ -60,27 +61,27 @@
     .breadcrumb a:hover { color: var(--blue-mid); }
     .breadcrumb span { color: var(--rule2); }
     .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-    .overview-left h2 { font-family: var(--font-head); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 600; line-height: 1.15; margin-bottom: 24px; }
-    .overview-left p { font-size: 0.92rem; color: var(--light); font-weight: 300; line-height: 1.85; margin-bottom: 16px; }
+    .overview-left h2 { font-family: var(--font); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 600; line-height: 1.15; margin-bottom: 24px; }
+    .overview-left p { font-size: 0.92rem; color: var(--offwhite); font-weight: 300; line-height: 1.85; margin-bottom: 16px; }
     .overview-right { padding: 40px; background: var(--ink2); border: 1px solid var(--rule); }
     .plan-highlight-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 16px; }
-    .plan-highlight-name { font-family: var(--font-head); font-size: 1.4rem; font-weight: 600; margin-bottom: 8px; }
-    .plan-highlight-price { font-family: var(--font-head); font-size: 2rem; font-weight: 600; color: var(--blue-mid); margin-bottom: 4px; }
+    .plan-highlight-name { font-family: var(--font); font-size: 1.4rem; font-weight: 600; margin-bottom: 8px; }
+    .plan-highlight-price { font-family: var(--font); font-size: 2rem; font-weight: 600; color: var(--blue-mid); margin-bottom: 4px; }
     .plan-highlight-price span { font-size: 1rem; font-weight: 300; color: var(--muted); }
     .plan-highlight-note { font-size: 0.8rem; color: var(--muted); font-weight: 300; margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid var(--rule); }
     .includes-title { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
     .includes-list { border-top: 1px solid var(--rule); }
     .include-row { display: grid; grid-template-columns: 40px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--rule); align-items: start; }
     .include-num { font-size: 0.75rem; font-weight: 500; color: var(--blue-mid); letter-spacing: 0.08em; padding-top: 3px; }
-    .include-content h4 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
-    .include-content p { font-size: 0.87rem; color: var(--light); font-weight: 300; line-height: 1.7; }
+    .include-content h4 { font-family: var(--font); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+    .include-content p { font-size: 0.87rem; color: var(--offwhite); font-weight: 300; line-height: 1.7; }
     .faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 56px; }
     .faq-item { background: var(--ink2); padding: 36px 40px; transition: background 0.2s; }
     .faq-item:hover { background: var(--ink3); }
-    .faq-q { font-family: var(--font-head); font-size: 1.1rem; font-weight: 600; margin-bottom: 12px; }
-    .faq-a { font-size: 0.88rem; color: var(--light); font-weight: 300; line-height: 1.75; }
+    .faq-q { font-family: var(--font); font-size: 1.1rem; font-weight: 600; margin-bottom: 12px; }
+    .faq-a { font-size: 0.88rem; color: var(--offwhite); font-weight: 300; line-height: 1.75; }
     .cta-band { background: var(--ink2); border: 1px solid var(--rule); padding: 64px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
-    .cta-band h2 { font-family: var(--font-head); font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 600; max-width: 540px; }
+    .cta-band h2 { font-family: var(--font); font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 600; max-width: 540px; }
     .cta-band h2 em { font-style: italic; color: var(--blue-mid); }
     .cta-actions { display: flex; gap: 16px; flex-wrap: wrap; flex-shrink: 0; }
     footer { background: #050608; border-top: 1px solid var(--rule); padding: 64px 0 36px; }
@@ -90,15 +91,15 @@
     .footer-col h5 { font-size: 0.66rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
     .footer-col ul { list-style: none; }
     .footer-col li { margin-bottom: 10px; }
-    .footer-col a { font-size: 0.85rem; color: var(--light); font-weight: 300; transition: color 0.2s; }
+    .footer-col a { font-size: 0.85rem; color: var(--offwhite); font-weight: 300; transition: color 0.2s; }
     .footer-col a:hover { color: var(--blue-mid); }
     .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 32px; border-top: 1px solid var(--rule); }
     .footer-bottom p { font-size: 0.78rem; color: var(--muted); font-weight: 300; }
     .social-row { display: flex; gap: 24px; }
     .social-row a { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
     .social-row a:hover { color: var(--blue-mid); }
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
-    .reveal.in { opacity: 1; transform: none; }
+    .reveal { opacity: 1; transform: none; }
+    
     @media (max-width: 960px) {
       .nav-links { display: none; } .nav-toggle { display: block; }
       .overview-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -298,7 +299,7 @@
         <h5>Contact</h5>
         <ul>
           <li><a href="tel:+13039709081">(303) 970-9081</a></li>
-          <li><a href="/cdn-cgi/l/email-protection#becddfd2dbcdfecedfd2d8d1ccd9dbd7ca90ddd1d3"><span class="__cf_email__" data-cfemail="3645575a53457646575a50594451535f421855595b">[email&#160;protected]</span></a></li>
+          <li><a href="/cdn-cgi/l/email-protection#7b081a171e083b0b1a171d14091c1e120f55181416"><span class="__cf_email__" data-cfemail="6d1e0c01081e2d1d0c010b021f0a080419430e0200">[email&#160;protected]</span></a></li>
           <li><span style="color:var(--muted);font-size:0.85rem;font-weight:300;">Denver, Colorado</span></li>
         </ul>
       </div>
@@ -317,7 +318,4 @@
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 30));
-  document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('open'));
-  function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
-  const ro = new IntersectionObserver((entries) => {
-    entries.forEach
+  document.getElementById('menuToggle').addEventListener(

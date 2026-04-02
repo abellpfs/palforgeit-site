@@ -283,8 +283,8 @@
     .footer-socials a:hover { color: var(--blue-light); }
 
     /* ── REVEAL ── */
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
-    .reveal.in { opacity: 1; transform: none; }
+    .reveal { opacity: 1; transform: none; }
+    
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
@@ -669,7 +669,7 @@
           <div class="contact-detail-icon">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
-          <a href="/cdn-cgi/l/email-protection#5d2e3c31382e1d2d3c313b322f3a383429733e3230"><span class="__cf_email__" data-cfemail="6211030e07112212030e040d1005070b164c010d0f">[email&#160;protected]</span></a>
+          <a href="/cdn-cgi/l/email-protection#1f6c7e737a6c5f6f7e7379706d787a766b317c7072"><span class="__cf_email__" data-cfemail="4a392b262f390a3a2b262c25382d2f233e64292527">[email&#160;protected]</span></a>
         </div>
         <div class="contact-detail">
           <div class="contact-detail-icon">
@@ -751,7 +751,7 @@
         <h5>Contact</h5>
         <ul>
           <li><a href="tel:+13039709081">(303) 970-9081</a></li>
-          <li><a href="/cdn-cgi/l/email-protection#d1a2b0bdb4a291a1b0bdb7bea3b6b4b8a5ffb2bebc"><span class="__cf_email__" data-cfemail="a5d6c4c9c0d6e5d5c4c9c3cad7c2c0ccd18bc6cac8">[email&#160;protected]</span></a></li>
+          <li><a href="/cdn-cgi/l/email-protection#5b283a373e281b2b3a373d34293c3e322f75383436"><span class="__cf_email__" data-cfemail="4a392b262f390a3a2b262c25382d2f233e64292527">[email&#160;protected]</span></a></li>
           <li><span style="font-size:0.85rem;color:var(--muted);">Denver, Colorado</span></li>
         </ul>
       </div>
@@ -762,7 +762,7 @@
         <a href="https://linkedin.com/company/palforgeit" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://facebook.com/palforgeit" target="_blank" rel="noopener">Facebook</a>
         <a href="https://instagram.com/palforgeit" target="_blank" rel="noopener">Instagram</a>
-        <a href="#">Privacy Policy</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
       </div>
     </div>
   </div>
@@ -773,12 +773,3 @@
   window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 30));
   document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('open'));
   function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
-  const ro = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), i * 70); ro.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
-  const form = document.getElementById('contactForm');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const action = form.getAttribute('action');
-    const success = document.getElementById('form-success
