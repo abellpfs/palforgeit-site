@@ -122,7 +122,8 @@
     .social-row a { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
     .social-row a:hover { color: var(--blue-mid); }
 
-    .reveal { opacity: 1; transform: none; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.in { opacity: 1; transform: none; }
     
 
     @media (max-width: 960px) {
