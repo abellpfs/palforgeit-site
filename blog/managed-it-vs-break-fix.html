@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Managed IT vs. Break-Fix: Which Model Costs Less? | Pal Forge IT Solutions</title>
+  <meta name="description" content="An honest comparison of managed IT services vs. break-fix IT for Denver small businesses. Total cost of ownership, downtime risk, and what the math actually shows." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://palforgeit.com/blog/managed-it-vs-break-fix" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --blue: #114EA1; --blue-mid: #3E79B2;
+      --ink: #08090B; --ink2: #0f1117; --ink3: #161b26;
+      --rule: rgba(186,192,198,0.1); --rule2: rgba(186,192,198,0.18);
+      --white: #F4F5F7; --muted: #7A8394; --light: #B0BBC8;
+      --font-head: 'Cormorant Garamond', serif;
+      --font-body: 'Roboto', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--ink); color: var(--white); font-family: var(--font-body); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+    a { color: inherit; text-decoration: none; }
+    .eyebrow { font-family: var(--font-body); font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue-mid); display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--blue-mid); }
+    .btn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-body); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 15px 32px; cursor: pointer; border: none; transition: all 0.22s ease; }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:hover { background: var(--blue-mid); transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: var(--white); border: 1px solid var(--rule2); }
+    .btn-ghost:hover { border-color: var(--blue-mid); color: var(--blue-mid); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background 0.35s, border-color 0.35s; border-bottom: 1px solid transparent; }
+    nav.scrolled { background: rgba(8,9,11,0.96); backdrop-filter: blur(20px); border-color: var(--rule); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 76px; }
+    .nav-logo img { height: 36px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 36px; }
+    .nav-links a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .nav-cta { padding: 11px 24px; font-size: 0.72rem; margin-left: 8px; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+    .nav-toggle span { display: block; width: 22px; height: 1px; background: var(--white); margin: 6px 0; }
+    .mobile-menu { display: none; position: fixed; inset: 0; z-index: 99; background: var(--ink); padding: 96px 40px 40px; flex-direction: column; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: var(--font-head); font-size: 2rem; font-weight: 600; color: var(--white); padding: 18px 0; border-bottom: 1px solid var(--rule); }
+    .mobile-menu a:last-child { color: var(--blue-mid); border-bottom: none; margin-top: 16px; }
+    .article-hero { padding: 160px 0 72px; background: linear-gradient(160deg, #08090B 0%, #0c1220 55%, #08090B 100%); border-bottom: 1px solid var(--rule); position: relative; overflow: hidden; }
+    .article-hero-line { position: absolute; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent, var(--rule2) 25%, var(--rule2) 75%, transparent); }
+    .article-hero-line:nth-child(1) { right: 15%; }
+    .article-hero-line:nth-child(2) { right: 35%; opacity: 0.5; }
+    .article-hero-content { position: relative; z-index: 1; max-width: 760px; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--muted); margin-bottom: 32px; flex-wrap: wrap; }
+    .breadcrumb a:hover { color: var(--blue-mid); }
+    .breadcrumb span { color: var(--rule2); }
+    .article-meta { display: flex; align-items: center; gap: 20px; margin-top: 24px; flex-wrap: wrap; }
+    .article-tag { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-mid); border: 1px solid rgba(62,121,178,0.3); padding: 4px 10px; }
+    .article-date { font-size: 0.78rem; color: var(--muted); font-weight: 300; }
+    .article-read-time { font-size: 0.78rem; color: var(--muted); font-weight: 300; }
+    .article-title { font-family: var(--font-head); font-size: clamp(2rem, 5vw, 3.6rem); font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; margin-top: 24px; }
+    .article-layout { display: grid; grid-template-columns: 1fr 280px; gap: 80px; padding: 80px 0 96px; align-items: start; }
+    .article-body h2 { font-family: var(--font-head); font-size: 1.8rem; font-weight: 600; margin: 48px 0 16px; line-height: 1.2; }
+    .article-body h3 { font-family: var(--font-head); font-size: 1.35rem; font-weight: 600; margin: 36px 0 12px; }
+    .article-body p { font-size: 0.95rem; color: var(--light); font-weight: 300; line-height: 1.85; margin-bottom: 20px; }
+    .article-body p:first-child { font-size: 1.05rem; color: var(--white); font-weight: 400; }
+    .article-body ul, .article-body ol { margin: 0 0 20px 0; padding-left: 20px; }
+    .article-body li { font-size: 0.95rem; color: var(--light); font-weight: 300; line-height: 1.75; margin-bottom: 8px; }
+    .article-body strong { color: var(--white); font-weight: 500; }
+    .callout { background: rgba(17,78,161,0.08); border-left: 3px solid var(--blue); padding: 24px 28px; margin: 32px 0; }
+    .callout p { margin-bottom: 0; color: var(--light); }
+    .callout strong { color: var(--blue-mid); }
+    .article-sidebar { position: sticky; top: 100px; }
+    .sidebar-block { background: var(--ink2); border: 1px solid var(--rule); padding: 28px; margin-bottom: 20px; }
+    .sidebar-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+    .sidebar-cta-title { font-family: var(--font-head); font-size: 1.1rem; font-weight: 600; margin-bottom: 12px; line-height: 1.3; }
+    .sidebar-cta-body { font-size: 0.83rem; color: var(--light); font-weight: 300; line-height: 1.7; margin-bottom: 20px; }
+    .sidebar-links { list-style: none; }
+    .sidebar-links li { border-bottom: 1px solid var(--rule); }
+    .sidebar-links li:last-child { border-bottom: none; }
+    .sidebar-links a { display: block; font-size: 0.83rem; color: var(--light); font-weight: 300; padding: 10px 0; transition: color 0.2s; }
+    .sidebar-links a:hover { color: var(--blue-mid); }
+    .cta-band { background: var(--ink2); border: 1px solid var(--rule); padding: 64px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+    .cta-band h2 { font-family: var(--font-head); font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 600; max-width: 540px; }
+    .cta-band h2 em { font-style: italic; color: var(--blue-mid); }
+    .cta-actions { display: flex; gap: 16px; flex-wrap: wrap; flex-shrink: 0; }
+    footer { background: #050608; border-top: 1px solid var(--rule); padding: 64px 0 36px; }
+    .footer-top { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 56px; }
+    .footer-logo img { height: 28px; width: auto; margin-bottom: 16px; }
+    .footer-brand p { font-size: 0.82rem; color: var(--muted); line-height: 1.75; font-weight: 300; max-width: 260px; }
+    .footer-col h5 { font-size: 0.66rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a { font-size: 0.85rem; color: var(--light); font-weight: 300; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--blue-mid); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 32px; border-top: 1px solid var(--rule); }
+    .footer-bottom p { font-size: 0.78rem; color: var(--muted); font-weight: 300; }
+    .social-row { display: flex; gap: 24px; }
+    .social-row a { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+    .social-row a:hover { color: var(--blue-mid); }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (max-width: 960px) {
+      .nav-links { display: none; } .nav-toggle { display: block; }
+      .article-layout { grid-template-columns: 1fr; gap: 48px; }
+      .article-sidebar { position: static; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .cta-band { flex-direction: column; padding: 40px; }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 0 24px; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .nav-inner { padding: 0 24px; }
+    }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><img src="../PAL_FORGE-Horizontal-RGB-Color-LG.png" alt="Pal Forge IT Solutions" /></a>
+    <div class="nav-links">
+      <a href="../index.html#services">Services</a>
+      <a href="../about.html">About</a>
+      <a href="../index.html#pricing">Pricing</a>
+      <a href="index.html" class="active">Blog</a>
+      <a href="../index.html#contact" class="btn btn-primary nav-cta">Free Assessment</a>
+    </div>
+    <button class="nav-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html#services" onclick="closeMobile()">Services</a>
+  <a href="../about.html" onclick="closeMobile()">About</a>
+  <a href="../index.html#pricing" onclick="closeMobile()">Pricing</a>
+  <a href="index.html" onclick="closeMobile()">Blog</a>
+  <a href="../index.html#contact" onclick="closeMobile()">Free Assessment</a>
+</div>
+
+<section class="article-hero">
+  <div class="article-hero-line"></div>
+  <div class="article-hero-line"></div>
+  <div class="container">
+    <div class="article-hero-content reveal">
+      <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="index.html">Blog</a><span>/</span>Managed IT vs. Break-Fix</div>
+      <div class="article-meta">
+        <div class="article-tag">Managed IT</div>
+        <div class="article-date">January 2025</div>
+        <div class="article-read-time">7 min read</div>
+      </div>
+      <h1 class="article-title">Managed IT vs. Break-Fix: Which Model Actually Costs Less?</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="article-layout">
+    <div class="article-body reveal">
+      <p>The break-fix model has an obvious surface appeal: you only pay for IT support when something goes wrong. No monthly retainer, no long-term commitment, no fees during the months when nothing breaks. For a small business watching its costs carefully, that can sound like the sensible choice.</p>
+        <p>But the math is more complicated than the monthly invoice suggests. When you account for the actual cost of downtime, emergency labor rates, the problems that never get fixed because no one is looking for them, and the cumulative security exposure that builds up in an unmanaged environment, the break-fix model often costs more — and carries risks that do not show up in any invoice until they become a serious incident.</p>
+
+        <h2>The Real Cost of Downtime</h2>
+        <p>When a server goes down, a critical application stops working, or a network issue prevents your team from doing their jobs, the cost is not just the IT labor to fix it. It is every hour of lost productivity across every affected employee, lost revenue from work that cannot be completed or customers that cannot be served, and the downstream effects that ripple through projects and deadlines.</p>
+        <p>Industry research consistently estimates the cost of IT downtime for small businesses at somewhere between $8,000 and $74,000 per hour, depending on the size of the business and the nature of the outage. Even at the low end of that range, a single four-hour outage costs more than many businesses spend on managed IT in an entire year.</p>
+        <div class="callout"><p><strong>The break-fix math:</strong> If your business has 20 employees at an average fully-loaded cost of $45 per hour, a four-hour outage costs $3,600 in lost labor alone — before a single technician is called. Add emergency labor rates, which typically run $150 to $250 per hour for break-fix providers, and the total cost of a single incident can easily exceed $5,000.</p></div>
+
+        <h2>Break-Fix Incentives Are Not Aligned With Yours</h2>
+        <p>This is worth stating plainly: a break-fix IT provider makes money when things break. They have no financial incentive to proactively identify and address problems that have not yet caused an outage. A server running with an aging hard drive that is showing early failure indicators represents a future invoice for them, not a current concern.</p>
+        <p>This is not an indictment of every break-fix provider — many are competent and ethical technicians. But the business model creates a structural misalignment between what is good for your business and what generates revenue for your IT provider.</p>
+        <p>Managed IT flips this dynamic. When you pay a flat monthly rate, your provider's incentive is to keep everything running cleanly — because every incident creates support work that costs them time without generating additional revenue. The financial incentives are aligned with your operational interests.</p>
+
+        <h2>What Proactive Management Actually Prevents</h2>
+        <p>The problems that a managed IT provider catches and addresses before they become incidents are largely invisible — you never see them because they never reach the point of causing a disruption. That invisibility makes it easy to underestimate their value.</p>
+        <p>In practice, proactive management catches things like:</p>
+        <ul>
+          <li>Failing hard drives identified through S.M.A.R.T. monitoring before they fail completely and take data with them</li>
+          <li>Backup jobs that have been failing silently for weeks, discovered before a restore is needed</li>
+          <li>Security patches that were missed during an update cycle, leaving systems exposed to vulnerabilities that are being actively exploited</li>
+          <li>Certificates expiring before they take down a critical service</li>
+          <li>Disk space filling up on a server before it causes application failures</li>
+          <li>Suspicious activity on endpoints indicating potential compromise, caught before an attacker reaches their objective</li>
+        </ul>
+        <p>None of these become invoices in a managed IT engagement. All of them would generate emergency service calls and potentially significant downtime in a break-fix model.</p>
+
+        <h2>Security Is Not Optional Anymore</h2>
+        <p>The break-fix model has a particularly significant gap when it comes to security. A break-fix provider typically responds to problems after they occur. Security requires continuous monitoring — watching for threats in real time, applying patches as they are released, and actively hunting for signs of compromise.</p>
+        <p>A business running on break-fix IT is, by definition, not being monitored continuously. Patches may be applied when a technician happens to visit. Security tools may or may not be deployed. No one is watching for the early indicators of a ransomware attack that are present days or weeks before the payload deploys.</p>
+        <p>The cost of a security incident dwarfs the cost of managed IT. The average total cost of a ransomware incident for a small business — including downtime, recovery, and remediation — exceeds $1.8 million. That number is not theoretical. It is the outcome for businesses that made the break-fix calculation and lost.</p>
+
+        <h2>A Realistic Comparison</h2>
+        <p>For a Denver business with 20 users, managed IT on a Security Plus plan runs approximately $1,900 per month — roughly $22,800 per year. That covers continuous monitoring, 24/7 support with a 15-minute response guarantee, endpoint protection, managed detection and response, email security, backup, and all the proactive maintenance that keeps systems running.</p>
+        <p>The equivalent in break-fix spend — accounting for one or two significant incidents per year, regular maintenance calls, emergency labor rates, and the security tools you would need to source and manage independently — typically reaches or exceeds that number. And it comes without the proactive monitoring, without the response time guarantee, and without the security posture that continuous management provides.</p>
+        <p>The break-fix model can make sense for very small businesses with minimal IT complexity and a high tolerance for downtime risk. For most businesses, the math points clearly toward managed IT — not as an expense, but as a cost reduction strategy with a measurable return.</p>
+        <p>If you would like to run the numbers for your specific environment, we are happy to do that as part of a free assessment. The comparison is usually more straightforward than people expect.</p>
+    </div>
+    <aside class="article-sidebar">
+        <div class="sidebar-block">
+          <div class="sidebar-label">Get a Free Assessment</div>
+          <div class="sidebar-cta-title">Want to See the Numbers for Your Business?</div>
+          <div class="sidebar-cta-body">We will run a side-by-side cost comparison for your specific environment and give you a clear picture of what managed IT would actually cost you.</div>
+          <a href="../index.html#contact" class="btn btn-primary" style="width:100%;justify-content:center;">Request Assessment</a>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Related Services</div>
+          <ul class="sidebar-links">
+            <li><a href="../services/managed-it.html">Managed IT Services</a></li>
+            <li><a href="../services/cybersecurity.html">Cybersecurity</a></li>
+            <li><a href="../services/backup.html">Backup and Recovery</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">More Articles</div>
+          <ul class="sidebar-links">
+            <li><a href="ransomware-denver-smb.html">Ransomware and Denver SMBs</a></li>
+            <li><a href="hipaa-compliance-2025.html">HIPAA Compliance in 2025</a></li>
+          </ul>
+        </div>
+      </aside>
+  </div>
+</div>
+
+<div class="container" style="padding-bottom:96px;">
+  <div class="cta-band reveal">
+    <h2>Have a Question? <em>We Will Give You a Straight Answer.</em></h2>
+    <div class="cta-actions">
+      <a href="../index.html#contact" class="btn btn-primary">Request a Free Assessment</a>
+      <a href="tel:+13039709081" class="btn btn-ghost">(303) 970-9081</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo"><img src="../PAL_FORGE-Horizontal-RGB-Color-LG.png" alt="Pal Forge IT Solutions" /></div>
+        <p>Enterprise-grade managed IT services and cybersecurity for Denver businesses. Proactive support. Predictable pricing. Real accountability.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="../services/managed-it.html">Managed IT Services</a></li>
+          <li><a href="../services/cybersecurity.html">Cybersecurity</a></li>
+          <li><a href="../services/cloud.html">Cloud Solutions</a></li>
+          <li><a href="../services/backup.html">Backup and Recovery</a></li>
+          <li><a href="../services/network.html">Network Solutions</a></li>
+          <li><a href="../services/compliance.html">HIPAA Compliance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="../index.html#process">Our Process</a></li>
+          <li><a href="../index.html#pricing">Pricing</a></li>
+          <li><a href="https://helpdesk.palforgeit.com" target="_blank" rel="noopener">Customer Portal</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+13039709081">(303) 970-9081</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#0a796b666f794a7a6b666c65786d6f637e24696567"><span class="__cf_email__" data-cfemail="9be8faf7fee8dbebfaf7fdf4e9fcfef2efb5f8f4f6">[email&#160;protected]</span></a></li>
+          <li><span style="color:var(--muted);font-size:0.85rem;font-weight:300;">Denver, Colorado</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Pal Forge IT Solutions, LLC. All rights reserved.</p>
+      <div class="social-row">
+        <a href="https://linkedin.com/company/palforgeit" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://facebook.com/palforgeit" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://instagram.com/palforgeit" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 30));
+  document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('open'));
+  function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach

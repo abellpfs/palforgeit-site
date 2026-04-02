@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Security Blog | Pal Forge IT Solutions | Denver</title>
+  <meta name="description" content="Practical IT security and technology insights for Denver small businesses. Cybersecurity, HIPAA compliance, managed IT, and more from Pal Forge IT Solutions." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://palforgeit.com/blog" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --blue: #114EA1; --blue-mid: #3E79B2;
+      --ink: #08090B; --ink2: #0f1117; --ink3: #161b26;
+      --rule: rgba(186,192,198,0.1); --rule2: rgba(186,192,198,0.18);
+      --white: #F4F5F7; --muted: #7A8394; --light: #B0BBC8;
+      --font-head: 'Cormorant Garamond', serif;
+      --font-body: 'Roboto', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--ink); color: var(--white); font-family: var(--font-body); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+    .section { padding: 96px 0; }
+    a { color: inherit; text-decoration: none; }
+    .eyebrow { font-family: var(--font-body); font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue-mid); display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--blue-mid); }
+    .display { font-family: var(--font-head); font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 600; line-height: 1.05; letter-spacing: -0.01em; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-body); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 15px 32px; cursor: pointer; border: none; transition: all 0.22s ease; }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:hover { background: var(--blue-mid); transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: var(--white); border: 1px solid var(--rule2); }
+    .btn-ghost:hover { border-color: var(--blue-mid); color: var(--blue-mid); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background 0.35s, border-color 0.35s; border-bottom: 1px solid transparent; }
+    nav.scrolled { background: rgba(8,9,11,0.96); backdrop-filter: blur(20px); border-color: var(--rule); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 76px; }
+    .nav-logo img { height: 36px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 36px; }
+    .nav-links a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .nav-cta { padding: 11px 24px; font-size: 0.72rem; margin-left: 8px; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+    .nav-toggle span { display: block; width: 22px; height: 1px; background: var(--white); margin: 6px 0; }
+    .mobile-menu { display: none; position: fixed; inset: 0; z-index: 99; background: var(--ink); padding: 96px 40px 40px; flex-direction: column; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: var(--font-head); font-size: 2rem; font-weight: 600; color: var(--white); padding: 18px 0; border-bottom: 1px solid var(--rule); }
+    .mobile-menu a:last-child { color: var(--blue-mid); border-bottom: none; margin-top: 16px; }
+    .page-hero { padding: 160px 0 96px; background: linear-gradient(160deg, #08090B 0%, #0c1220 55%, #08090B 100%); border-bottom: 1px solid var(--rule); position: relative; overflow: hidden; }
+    .page-hero-line { position: absolute; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent, var(--rule2) 25%, var(--rule2) 75%, transparent); }
+    .page-hero-line:nth-child(1) { right: 15%; }
+    .page-hero-line:nth-child(2) { right: 35%; opacity: 0.5; }
+    .page-hero-content { position: relative; z-index: 1; max-width: 720px; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--muted); margin-bottom: 32px; }
+    .breadcrumb a:hover { color: var(--blue-mid); }
+    .breadcrumb span { color: var(--rule2); }
+
+    /* BLOG GRID */
+    .blog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 64px; }
+    .blog-card { background: var(--ink2); padding: 48px 40px; transition: background 0.22s; display: flex; flex-direction: column; }
+    .blog-card:hover { background: var(--ink3); }
+    .blog-card.featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .blog-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+    .blog-tag { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-mid); border: 1px solid rgba(62,121,178,0.3); padding: 4px 10px; }
+    .blog-date { font-size: 0.75rem; color: var(--muted); font-weight: 300; }
+    .blog-card h2 { font-family: var(--font-head); font-size: 1.6rem; font-weight: 600; line-height: 1.2; margin-bottom: 12px; }
+    .blog-card h3 { font-family: var(--font-head); font-size: 1.3rem; font-weight: 600; line-height: 1.2; margin-bottom: 12px; }
+    .blog-card p { font-size: 0.88rem; color: var(--light); font-weight: 300; line-height: 1.75; margin-bottom: 24px; flex-grow: 1; }
+    .blog-read-more { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-mid); display: flex; align-items: center; gap: 6px; transition: gap 0.2s; margin-top: auto; }
+    .blog-read-more:hover { gap: 10px; }
+    .blog-featured-content {}
+    .blog-featured-aside { border-left: 1px solid var(--rule); padding-left: 48px; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+    .featured-stat-num { font-family: var(--font-head); font-size: 2.4rem; font-weight: 600; color: var(--blue-mid); line-height: 1; }
+    .featured-stat-label { font-size: 0.75rem; color: var(--muted); font-weight: 300; margin-top: 4px; }
+
+    /* CTA */
+    .cta-band { background: var(--ink2); border: 1px solid var(--rule); padding: 64px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; margin-top: 80px; }
+    .cta-band h2 { font-family: var(--font-head); font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 600; max-width: 540px; }
+    .cta-band h2 em { font-style: italic; color: var(--blue-mid); }
+    .cta-actions { display: flex; gap: 16px; flex-wrap: wrap; flex-shrink: 0; }
+
+    footer { background: #050608; border-top: 1px solid var(--rule); padding: 64px 0 36px; }
+    .footer-top { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 56px; }
+    .footer-logo img { height: 28px; width: auto; margin-bottom: 16px; }
+    .footer-brand p { font-size: 0.82rem; color: var(--muted); line-height: 1.75; font-weight: 300; max-width: 260px; }
+    .footer-col h5 { font-size: 0.66rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a { font-size: 0.85rem; color: var(--light); font-weight: 300; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--blue-mid); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 32px; border-top: 1px solid var(--rule); }
+    .footer-bottom p { font-size: 0.78rem; color: var(--muted); font-weight: 300; }
+    .social-row { display: flex; gap: 24px; }
+    .social-row a { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+    .social-row a:hover { color: var(--blue-mid); }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    @media (max-width: 960px) {
+      .nav-links { display: none; } .nav-toggle { display: block; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .blog-card.featured { grid-column: auto; grid-template-columns: 1fr; }
+      .blog-featured-aside { border-left: none; border-top: 1px solid var(--rule); padding-left: 0; padding-top: 32px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .cta-band { flex-direction: column; padding: 40px; }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 0 24px; }
+      .section { padding: 72px 0; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .nav-inner { padding: 0 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><img src="../PAL_FORGE-Horizontal-RGB-Color-LG.png" alt="Pal Forge IT Solutions" /></a>
+    <div class="nav-links">
+      <a href="../index.html#services">Services</a>
+      <a href="../about.html">About</a>
+      <a href="../index.html#process">Process</a>
+      <a href="../index.html#pricing">Pricing</a>
+      <a href="index.html" class="active">Blog</a>
+      <a href="../index.html#contact" class="btn btn-primary nav-cta">Free Assessment</a>
+    </div>
+    <button class="nav-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html#services" onclick="closeMobile()">Services</a>
+  <a href="../about.html" onclick="closeMobile()">About</a>
+  <a href="../index.html#pricing" onclick="closeMobile()">Pricing</a>
+  <a href="index.html" onclick="closeMobile()">Blog</a>
+  <a href="../index.html#contact" onclick="closeMobile()">Free Assessment</a>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-line"></div>
+  <div class="page-hero-line"></div>
+  <div class="container">
+    <div class="page-hero-content reveal">
+      <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span>Blog</div>
+      <div class="eyebrow">Insights and Resources</div>
+      <h1 class="display">Practical IT Guidance<br>for Denver Businesses.</h1>
+      <p style="font-size:1.05rem;color:var(--light);line-height:1.8;font-weight:300;margin-top:24px;max-width:560px;">No jargon, no vendor pitches. Just straightforward information to help you make better decisions about your technology and security.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="eyebrow reveal">Latest Articles</div>
+    <div class="blog-grid">
+
+      <!-- FEATURED -->
+      <a href="ransomware-denver-smb.html" class="blog-card featured reveal">
+        <div class="blog-featured-content">
+          <div class="blog-meta">
+            <div class="blog-tag">Cybersecurity</div>
+            <div class="blog-date">March 2025</div>
+          </div>
+          <h2>Ransomware Is Targeting Denver Small Businesses. Here Is What You Need to Know.</h2>
+          <p>Ransomware attacks against small and mid-sized businesses have increased significantly over the past two years. Colorado businesses are not immune. This article breaks down how these attacks actually work, why SMBs are increasingly the primary target, and the specific steps you can take to reduce your exposure before an incident happens.</p>
+          <span class="blog-read-more">Read Article &#x2192;</span>
+        </div>
+        <div class="blog-featured-aside">
+          <div>
+            <div class="featured-stat-num">68%</div>
+            <div class="featured-stat-label">of ransomware attacks in 2024 targeted businesses with fewer than 250 employees</div>
+          </div>
+          <div>
+            <div class="featured-stat-num">$1.85M</div>
+            <div class="featured-stat-label">average total cost of a ransomware incident including downtime, recovery, and remediation</div>
+          </div>
+          <div>
+            <div class="featured-stat-num">21 days</div>
+            <div class="featured-stat-label">average recovery time for SMBs following a ransomware attack</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- ARTICLE 2 -->
+      <a href="hipaa-compliance-2025.html" class="blog-card reveal">
+        <div class="blog-meta">
+          <div class="blog-tag">Compliance</div>
+          <div class="blog-date">February 2025</div>
+        </div>
+        <h3>HIPAA Compliance in 2025: What Denver Healthcare Providers Actually Need to Do</h3>
+        <p>HIPAA compliance is not a one-time project. It is an ongoing program that requires documented policies, regular risk assessments, and continuous monitoring of your technical controls. This guide covers the practical requirements for Denver healthcare providers and the most common gaps we find during assessments.</p>
+        <span class="blog-read-more">Read Article &#x2192;</span>
+      </a>
+
+      <!-- ARTICLE 3 -->
+      <a href="managed-it-vs-break-fix.html" class="blog-card reveal">
+        <div class="blog-meta">
+          <div class="blog-tag">Managed IT</div>
+          <div class="blog-date">January 2025</div>
+        </div>
+        <h3>Managed IT vs. Break-Fix: Which Model Actually Costs Less?</h3>
+        <p>The break-fix model feels cheaper because you only pay when something goes wrong. But when you factor in the real cost of downtime, emergency labor rates, and the problems that never get fixed proactively, the math often looks very different. Here is an honest comparison for Denver SMBs.</p>
+        <span class="blog-read-more">Read Article &#x2192;</span>
+      </a>
+
+    </div>
+
+    <div class="cta-band reveal">
+      <h2>Have a Question About Your IT or Security? <em>We Will Give You a Straight Answer.</em></h2>
+      <div class="cta-actions">
+        <a href="../index.html#contact" class="btn btn-primary">Request a Free Assessment</a>
+        <a href="tel:+13039709081" class="btn btn-ghost">(303) 970-9081</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo"><img src="../PAL_FORGE-Horizontal-RGB-Color-LG.png" alt="Pal Forge IT Solutions" /></div>
+        <p>Enterprise-grade managed IT services and cybersecurity for Denver businesses. Proactive support. Predictable pricing. Real accountability.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="../services/managed-it.html">Managed IT Services</a></li>
+          <li><a href="../services/cybersecurity.html">Cybersecurity</a></li>
+          <li><a href="../services/cloud.html">Cloud Solutions</a></li>
+          <li><a href="../services/backup.html">Backup and Recovery</a></li>
+          <li><a href="../services/network.html">Network Solutions</a></li>
+          <li><a href="../services/compliance.html">HIPAA Compliance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="../index.html#process">Our Process</a></li>
+          <li><a href="../index.html#pricing">Pricing</a></li>
+          <li><a href="https://helpdesk.palforgeit.com" target="_blank" rel="noopener">Customer Portal</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+13039709081">(303) 970-9081</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#fe8d9f929b8dbe8e9f9298918c999b978ad09d9193"><span class="__cf_email__" data-cfemail="bdcedcd1d8cefdcddcd1dbd2cfdad8d4c993ded2d0">[email&#160;protected]</span></a></li>
+          <li><span style="color:var(--muted);font-size:0.85rem;font-weight:300;">Denver, Colorado</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Pal Forge IT Solutions, LLC. All rights reserved.</p>
+      <div class="social-row">
+        <a href="https://linkedin.com/company/palforgeit" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://facebook.com/palforgeit" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://instagram.com/palforgeit" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 30));
+  document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('open'));
+  function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach(
