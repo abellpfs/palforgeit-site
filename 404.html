@@ -159,7 +159,7 @@
       </ul></div>
       <div class="footer-col"><h5>Contact</h5><ul>
         <li><a href="tel:+13039709081">(303) 970-9081</a></li>
-        <li><a href="/cdn-cgi/l/email-protection#3e4d5f525b4d7e4e5f5258514c595b574a105d5153"><span class="__cf_email__" data-cfemail="2350424f46506353424f454c5144464a570d404c4e">[email&#160;protected]</span></a></li>
+        <li><a href="/cdn-cgi/l/email-protection#7003111c15033000111c161f02171519045e131f1d"><span class="__cf_email__" data-cfemail="097a68656c7a497968656f667b6e6c607d276a6664">[email&#160;protected]</span></a></li>
         <li><span style="font-size:.85rem;color:rgba(255,255,255,.35);">Denver, Colorado</span></li>
       </ul></div>
     </div>
@@ -181,16 +181,18 @@
   var mt=document.getElementById('menuToggle');
   if(mt) mt.addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('open');});
   window.closeMobile=function(){var m=document.getElementById('mobileMenu');if(m)m.classList.remove('open');};
+  window.addEventListener('load', function() {
   var vh=window.innerHeight;
-  document.querySelectorAll('.reveal').forEach(function(el){
-    if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
-  });
-  var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e,i){
-      if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+    document.querySelectorAll('.reveal').forEach(function(el){
+      if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
     });
-  },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e,i){
+        if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+      });
+    },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+  });
   var form=document.getElementById('contactForm');
   if(form){
     form.addEventListener('submit',function(e){

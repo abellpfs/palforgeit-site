@@ -150,7 +150,7 @@
 
 <section class="article-hero">
   <div class="container">
-    <div class="article-hero-content reveal">
+    <div class="article-hero-content">
       <div class="breadcrumb"><a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><a href="index.html">Blog</a><span class="breadcrumb-sep">/</span>Managed IT</div>
       <div class="article-meta">
         <div class="article-tag">Managed IT</div>
@@ -242,7 +242,7 @@
       </ul></div>
       <div class="footer-col"><h5>Contact</h5><ul>
         <li><a href="tel:+13039709081">(303) 970-9081</a></li>
-        <li><a href="/cdn-cgi/l/email-protection#e291838e8791a292838e848d9085878b96cc818d8f"><span class="__cf_email__" data-cfemail="384b59545d4b784859545e574a5f5d514c165b5755">[email&#160;protected]</span></a></li>
+        <li><a href="/cdn-cgi/l/email-protection#4a392b262f390a3a2b262c25382d2f233e64292527"><span class="__cf_email__" data-cfemail="81f2e0ede4f2c1f1e0ede7eef3e6e4e8f5afe2eeec">[email&#160;protected]</span></a></li>
         <li><span style="font-size:.85rem;color:rgba(255,255,255,.35);">Denver, Colorado</span></li>
       </ul></div>
     </div>
@@ -264,16 +264,18 @@
   var mt=document.getElementById('menuToggle');
   if(mt) mt.addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('open');});
   window.closeMobile=function(){var m=document.getElementById('mobileMenu');if(m)m.classList.remove('open');};
+  window.addEventListener('load', function() {
   var vh=window.innerHeight;
-  document.querySelectorAll('.reveal').forEach(function(el){
-    if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
-  });
-  var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e,i){
-      if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+    document.querySelectorAll('.reveal').forEach(function(el){
+      if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
     });
-  },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e,i){
+        if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+      });
+    },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+  });
   var form=document.getElementById('contactForm');
   if(form){
     form.addEventListener('submit',function(e){

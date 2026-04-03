@@ -149,7 +149,7 @@
 
 <section class="page-hero">
   <div class="container">
-    <div class="page-hero-content reveal">
+    <div class="page-hero-content">
       <div class="breadcrumb"><a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><a href="../index.html#services">Services</a><span class="breadcrumb-sep">/</span>Cloud Solutions</div>
       <div class="label">Cloud Solutions</div>
       <h1 class="page-title">Cloud Infrastructure<br><span>Built to Scale With You.</span></h1>
@@ -266,16 +266,18 @@
   var mt=document.getElementById('menuToggle');
   if(mt) mt.addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('open');});
   window.closeMobile=function(){var m=document.getElementById('mobileMenu');if(m)m.classList.remove('open');};
+  window.addEventListener('load', function() {
   var vh=window.innerHeight;
-  document.querySelectorAll('.reveal').forEach(function(el){
-    if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
-  });
-  var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e,i){
-      if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+    document.querySelectorAll('.reveal').forEach(function(el){
+      if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
     });
-  },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e,i){
+        if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+      });
+    },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+  });
   var form=document.getElementById('contactForm');
   if(form){
     form.addEventListener('submit',function(e){

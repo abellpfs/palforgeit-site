@@ -158,11 +158,11 @@
       <h2>Data Retention</h2>
       <p>We retain contact form submissions and inquiry communications for as long as necessary to respond to your inquiry and for a reasonable period thereafter for business records purposes.</p>
       <h2>Your Rights</h2>
-      <p>You may request access to, correction of, or deletion of personal information we hold about you by contacting us at <a href="/cdn-cgi/l/email-protection#2251434e47516252434e444d5045474b560c414d4f"><span class="__cf_email__" data-cfemail="0e7d6f626b7d4e7e6f6268617c696b677a206d6163">[email&#160;protected]</span></a>. We will respond to reasonable requests within 30 days.</p>
+      <p>You may request access to, correction of, or deletion of personal information we hold about you by contacting us at <a href="/cdn-cgi/l/email-protection#e192808d8492a191808d878e9386848895cf828e8c"><span class="__cf_email__" data-cfemail="1a697b767f695a6a7b767c75687d7f736e34797577">[email&#160;protected]</span></a>. We will respond to reasonable requests within 30 days.</p>
       <h2>Changes to This Policy</h2>
       <p>We may update this Privacy Policy from time to time. Continued use of our website after changes are posted constitutes acceptance of the updated policy.</p>
       <h2>Contact Us</h2>
-      <p>Pal Forge IT Solutions, LLC<br><a href="/cdn-cgi/l/email-protection#c5b6a4a9a0b685b5a4a9a3aab7a2a0acb1eba6aaa8"><span class="__cf_email__" data-cfemail="2754464b42546757464b41485540424e530944484a">[email&#160;protected]</span></a><br><a href="tel:+13039709081">(303) 970-9081</a><br>Denver, Colorado</p>
+      <p>Pal Forge IT Solutions, LLC<br><a href="/cdn-cgi/l/email-protection#6b180a070e182b1b0a070d04190c0e021f45080406"><span class="__cf_email__" data-cfemail="eb988a878e98ab9b8a878d84998c8e829fc5888486">[email&#160;protected]</span></a><br><a href="tel:+13039709081">(303) 970-9081</a><br>Denver, Colorado</p>
     </div>
   </div>
 </section>
@@ -194,7 +194,7 @@
       </ul></div>
       <div class="footer-col"><h5>Contact</h5><ul>
         <li><a href="tel:+13039709081">(303) 970-9081</a></li>
-        <li><a href="/cdn-cgi/l/email-protection#cab9aba6afb98abaaba6aca5b8adafa3bee4a9a5a7"><span class="__cf_email__" data-cfemail="a7d4c6cbc2d4e7d7c6cbc1c8d5c0c2ced389c4c8ca">[email&#160;protected]</span></a></li>
+        <li><a href="/cdn-cgi/l/email-protection#8cffede0e9ffccfcede0eae3feebe9e5f8a2efe3e1"><span class="__cf_email__" data-cfemail="6714060b02142717060b01081500020e134904080a">[email&#160;protected]</span></a></li>
         <li><span style="font-size:.85rem;color:rgba(255,255,255,.35);">Denver, Colorado</span></li>
       </ul></div>
     </div>
@@ -216,16 +216,18 @@
   var mt=document.getElementById('menuToggle');
   if(mt) mt.addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('open');});
   window.closeMobile=function(){var m=document.getElementById('mobileMenu');if(m)m.classList.remove('open');};
+  window.addEventListener('load', function() {
   var vh=window.innerHeight;
-  document.querySelectorAll('.reveal').forEach(function(el){
-    if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
-  });
-  var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e,i){
-      if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+    document.querySelectorAll('.reveal').forEach(function(el){
+      if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
     });
-  },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e,i){
+        if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+      });
+    },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+  });
   var form=document.getElementById('contactForm');
   if(form){
     form.addEventListener('sub
