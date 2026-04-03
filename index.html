@@ -279,7 +279,7 @@
   <div class="container">
     <div class="hero-layout">
       <div class="reveal">
-        <div class="hero-eyebrow">Serving Denver Businesses</div>
+        <div class="hero-eyebrow">Serving Businesses Nationwide</div>
         <h1>Stop Reacting to IT Problems.<br><em>Start Preventing Them.</em></h1>
         <p class="hero-sub">Pal Forge IT gives Denver businesses a proactive managed IT partner — 24/7 monitoring, 15-minute response times, enterprise-grade security, and flat-rate pricing that never surprises you.</p>
         <div class="hero-actions">
@@ -714,13 +714,6 @@
         e.preventDefault();
         var action = form.getAttribute('action');
         var success = document.getElementById('formSuccess');
-        if (action.indexOf('YOUR_FORM_ID') !== -1) { success.style.display = 'block'; form.reset(); return; }
-        fetch(action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
-          .then(function(r) { if (r.ok) { success.style.display = 'block'; form.reset(); } })
-          .catch(function(err) { console.error(err); });
-      });
-    }
-  })();
-</script>
+        if (action.indexOf('YOUR_FORM
 </body>
 </html>

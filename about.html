@@ -1,128 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | Pal Forge IT Solutions | Denver Managed IT</title>
-  <meta name="description" content="Learn about Pal Forge IT Solutions — a Denver-based managed IT and cybersecurity company built to give small and mid-sized businesses access to enterprise-grade technology." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Pal Forge IT Solutions</title>
+  <meta name="description" content="Learn about Pal Forge IT Solutions — a managed IT and cybersecurity company built to give businesses access to enterprise-grade technology." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://palforgeit.com/about" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
 
     :root {
-      --blue: #114EA1; --blue-mid: #3E79B2; --blue-light: #5B9BD5;
-      --ink: #0D1117; --ink2: #131920; --ink3: #1a2332;
-      --rule: rgba(255,255,255,0.06); --rule2: rgba(255,255,255,0.1);
-      --white: #F0F4F8; --offwhite: #C8D4E0; --muted: #6B7E94;
-      --font: 'Plus Jakarta Sans', sans-serif;
+      --blue:      #114EA1;
+      --blue-dk:   #0d3d80;
+      --blue-mid:  #3E79B2;
+      --blue-pale: #EBF2FB;
+      --blue-pale2:#ddeaf8;
+      --ink:       #0F1923;
+      --body:      #374151;
+      --muted:     #6B7280;
+      --border:    #E5E7EB;
+      --border2:   #D1D5DB;
+      --bg:        #FFFFFF;
+      --bg2:       #F9FAFB;
+      --bg3:       #F3F6FA;
+      --sh-sm:     0 1px 3px rgba(0,0,0,0.07),0 1px 2px rgba(0,0,0,0.04);
+      --sh-md:     0 4px 16px rgba(0,0,0,0.07),0 2px 6px rgba(0,0,0,0.04);
+      --sh-lg:     0 12px 40px rgba(0,0,0,0.09),0 4px 12px rgba(0,0,0,0.04);
+      --font-h:    'Instrument Serif',serif;
+      --font-b:    'Inter',sans-serif;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--ink); color: var(--white); font-family: var(--font); font-size: 16px; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-    .container { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
-    .section { padding: 96px 0; }
-    a { color: inherit; text-decoration: none; }
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
-    .reveal.in { opacity: 1; transform: none; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--body);font-family:var(--font-b);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+    .container{max-width:1120px;margin:0 auto;padding:0 32px;}
+    .section{padding:100px 0;}
+    .section--gray{background:var(--bg2);}
+    a{color:inherit;text-decoration:none;}
+    img{display:block;max-width:100%;}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
+    .reveal.in{opacity:1;transform:none;}
+    .label{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+    .label::before{content:'';width:24px;height:2px;background:var(--blue);flex-shrink:0;}
+    .h2{font-family:var(--font-h);font-size:clamp(2rem,3.8vw,3rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:18px;}
+    .h2 em{font-style:italic;color:var(--blue);}
+    .lead{font-size:1.05rem;color:var(--muted);line-height:1.75;}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-b);font-weight:600;font-size:.875rem;padding:14px 28px;cursor:pointer;border:none;transition:all .2s;border-radius:6px;}
+    .btn-primary{background:var(--blue);color:#fff;}
+    .btn-primary:hover{background:var(--blue-dk);transform:translateY(-1px);box-shadow:0 6px 20px rgba(17,78,161,.28);}
+    .btn-secondary{background:var(--bg);color:var(--blue);border:1.5px solid var(--blue);}
+    .btn-secondary:hover{background:var(--blue-pale);}
+    .btn-ghost{background:transparent;color:var(--body);border:1.5px solid var(--border2);}
+    .btn-ghost:hover{border-color:var(--blue);color:var(--blue);}
+    .btn-white{background:#fff;color:var(--blue);}
+    .btn-white:hover{background:var(--blue-pale);transform:translateY(-1px);}
 
-    .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font); font-weight: 600; font-size: 0.875rem; padding: 14px 28px; cursor: pointer; border: none; transition: all 0.2s ease; border-radius: 6px; }
-    .btn-primary { background: var(--blue); color: #fff; box-shadow: 0 4px 20px rgba(17,78,161,0.3); }
-    .btn-primary:hover { background: #1560c0; transform: translateY(-1px); }
-    .btn-outline { background: transparent; color: var(--white); border: 1.5px solid var(--rule2); border-radius: 6px; }
-    .btn-outline:hover { border-color: var(--blue-mid); color: var(--blue-light); }
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background 0.3s, border-color 0.3s; border-bottom: 1px solid transparent; }
-    nav.scrolled { background: rgba(13,17,23,0.95); backdrop-filter: blur(16px); border-color: var(--rule); }
-    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
-    .nav-logo img { height: 72px; width: 220px; object-fit: contain; object-position: left center; display: block; filter: brightness(100); }
-    .nav-links { display: flex; align-items: center; gap: 32px; }
-    .nav-links a { font-size: 0.82rem; font-weight: 500; color: var(--muted); transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--white); }
-    .nav-cta { margin-left: 8px; padding: 10px 22px; font-size: 0.82rem; }
-    .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
-    .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--white); margin: 5px 0; }
-    .mobile-menu { display: none; position: fixed; inset: 0; z-index: 99; background: var(--ink); padding: 88px 32px 40px; flex-direction: column; gap: 4px; }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a { font-size: 1.4rem; font-weight: 700; color: var(--white); padding: 14px 0; border-bottom: 1px solid var(--rule); }
-    .mobile-menu a:last-child { color: var(--blue-light); border: none; margin-top: 12px; }
+    #nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s;}
+    #nav.nav--scrolled{border-color:var(--border);box-shadow:var(--sh-sm);}
+    .nav-inner{max-width:1120px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+    .nav-logo img{height:72px;width:220px;object-fit:contain;object-position:left center;display:block;}
+    .nav-links{display:flex;align-items:center;gap:28px;}
+    .nav-links a{font-size:.82rem;font-weight:500;color:var(--muted);transition:color .2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--ink);}
+    .nav-cta{margin-left:8px;padding:10px 22px;font-size:.82rem;}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;}
+    .nav-toggle span{display:block;width:22px;height:1.5px;background:var(--ink);margin:5px 0;}
+    .mobile-menu{display:none;position:fixed;inset:0;z-index:99;background:#fff;padding:88px 32px 40px;flex-direction:column;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{font-family:var(--font-h);font-size:1.8rem;color:var(--ink);padding:16px 0;border-bottom:1px solid var(--border);}
+    .mobile-menu a:last-child{font-family:var(--font-b);font-size:1rem;font-weight:600;color:var(--blue);border:none;margin-top:16px;}
 
-    .page-hero { padding: 148px 0 64px; background: linear-gradient(160deg, #0D1117 0%, #0f1825 55%, #0D1117 100%); border-bottom: 1px solid var(--rule); position: relative; overflow: hidden; }
-    .page-hero::before { content: ''; position: absolute; top: 0; right: 15%; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent, var(--rule2) 25%, var(--rule2) 75%, transparent); }
-    .page-hero::after { content: ''; position: absolute; top: 0; right: 35%; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent, var(--rule) 25%, var(--rule) 75%, transparent); }
-    .page-hero-content { position: relative; z-index: 1; max-width: 720px; }
-    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--muted); margin-bottom: 28px; flex-wrap: wrap; }
-    .breadcrumb a:hover { color: var(--blue-light); }
-    .breadcrumb span { color: var(--rule2); }
-    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 12px; }
-    .page-title { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 20px; }
-    .page-title span { color: var(--blue-light); }
-    .page-sub { font-size: 1.05rem; color: var(--offwhite); line-height: 1.75; max-width: 580px; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font); font-weight: 600; font-size: 0.875rem; padding: 14px 28px; cursor: pointer; border: none; transition: all 0.2s ease; border-radius: 6px; }
-    .btn-primary { background: var(--blue); color: #fff; } .btn-primary:hover { background: #1560c0; transform: translateY(-1px); }
-    .btn-outline { background: transparent; color: var(--white); border: 1.5px solid var(--rule2); border-radius: 6px; } .btn-outline:hover { border-color: var(--blue-mid); color: var(--blue-light); }
-    .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-    .mission-left h2 { font-size: clamp(1.8rem,3vw,2.6rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 20px; }
-    .mission-left p { font-size: 0.95rem; color: var(--offwhite); line-height: 1.8; margin-bottom: 16px; }
-    .values-stack { display: flex; flex-direction: column; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 16px; overflow: hidden; }
-    .value-cell { background: var(--ink2); padding: 28px 32px; transition: background 0.2s; }
-    .value-cell:hover { background: var(--ink3); }
-    .value-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
-    .value-cell h4 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
-    .value-cell p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
-    .story-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; }
-    .story-stat { margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--rule); }
-    .story-stat:last-child { border-bottom: none; }
-    .story-stat-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
-    .story-stat-num { font-size: 2.2rem; font-weight: 800; color: var(--blue-mid); line-height: 1; margin-bottom: 4px; }
-    .story-stat-desc { font-size: 0.78rem; color: var(--muted); font-weight: 400; }
-    .story-body h3 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.01em; margin: 36px 0 12px; }
-    .story-body h3:first-child { margin-top: 0; }
-    .story-body p { font-size: 0.95rem; color: var(--offwhite); line-height: 1.85; margin-bottom: 16px; }
-    .stack-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 16px; overflow: hidden; margin-top: 48px; }
-    .stack-cell { background: var(--ink2); padding: 28px 24px; transition: background 0.2s; }
-    .stack-cell:hover { background: var(--ink3); }
-    .stack-category { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 16px; }
-    .stack-tools { display: flex; flex-direction: column; gap: 8px; }
-    .stack-tool { font-size: 0.85rem; color: var(--offwhite); display: flex; align-items: center; gap: 8px; }
-    .stack-tool::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
-    .cta-band { background: var(--ink2); border: 1px solid var(--rule2); border-radius: 16px; padding: 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; margin-top: 80px; }
-    .cta-band h2 { font-size: clamp(1.4rem,2.5vw,2rem); font-weight: 800; letter-spacing: -0.02em; max-width: 480px; line-height: 1.2; }
-    .cta-band h2 span { color: var(--blue-light); }
-    .cta-actions { display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0; }
-    @media (max-width: 900px) { .nav-links { display: none; } .nav-toggle { display: block; } .mission-grid { grid-template-columns: 1fr; gap: 40px; } .story-grid { grid-template-columns: 1fr; gap: 40px; } .stack-grid { grid-template-columns: 1fr 1fr; } .cta-band { flex-direction: column; padding: 32px; } }
-    @media (max-width: 600px) { .stack-grid { grid-template-columns: 1fr; } }
+    .page-hero{padding:148px 0 72px;background:linear-gradient(165deg,#f5f8fd 0%,#fafbff 45%,#fff 100%);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;top:0;right:15%;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(17,78,161,.08) 25%,rgba(17,78,161,.08) 75%,transparent);}
+    .page-hero-content{position:relative;z-index:1;max-width:720px;}
+    .breadcrumb{display:flex;align-items:center;gap:8px;font-size:.75rem;color:var(--muted);margin-bottom:28px;flex-wrap:wrap;}
+    .breadcrumb a:hover{color:var(--blue);}
+    .breadcrumb-sep{color:var(--border2);}
+    .page-title{font-family:var(--font-h);font-size:clamp(2rem,5vw,3.4rem);font-weight:400;line-height:1.1;letter-spacing:-.01em;margin-bottom:20px;color:var(--ink);}
+    .page-title span{font-style:italic;color:var(--blue);}
+    .page-sub{font-size:1.05rem;color:var(--muted);line-height:1.75;max-width:580px;}
+    .mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+    .mission-left h2{font-family:var(--font-h);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:20px;}
+    .mission-left p{font-size:.95rem;color:var(--muted);line-height:1.8;margin-bottom:16px;}
+    .values-stack{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+    .value-cell{background:var(--bg);padding:26px 28px;transition:background .2s;}
+    .value-cell:hover{background:var(--bg3);}
+    .value-label{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:6px;}
+    .value-cell h4{font-size:.95rem;font-weight:600;color:var(--ink);margin-bottom:5px;}
+    .value-cell p{font-size:.84rem;color:var(--muted);line-height:1.65;}
+    .story-grid{display:grid;grid-template-columns:1fr 2fr;gap:64px;}
+    .story-stat{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+    .story-stat:last-child{border-bottom:none;}
+    .story-stat-label{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+    .story-stat-num{font-family:var(--font-h);font-size:2.2rem;color:var(--blue);line-height:1;margin-bottom:4px;}
+    .story-stat-desc{font-size:.78rem;color:var(--muted);}
+    .story-body h3{font-family:var(--font-h);font-size:1.4rem;font-weight:400;color:var(--ink);margin:32px 0 10px;}
+    .story-body h3:first-child{margin-top:0;}
+    .story-body p{font-size:.95rem;color:var(--muted);line-height:1.85;margin-bottom:14px;}
+    .stack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-top:48px;}
+    .stack-cell{background:var(--bg);padding:28px 24px;transition:background .2s;}
+    .stack-cell:hover{background:var(--bg3);}
+    .stack-cat{font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:16px;}
+    .stack-tools{display:flex;flex-direction:column;gap:8px;}
+    .stack-tool{font-size:.85rem;color:var(--body);display:flex;align-items:center;gap:8px;}
+    .stack-tool::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--blue);flex-shrink:0;}
+    .cta-band{background:var(--blue);border-radius:20px;padding:56px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-top:80px;}
+    .cta-band h2{font-family:var(--font-h);font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:400;color:#fff;line-height:1.2;}
+    .cta-band h2 em{font-style:italic;}
+    .cta-actions{display:flex;gap:12px;flex-wrap:wrap;flex-shrink:0;}
+    @media(max-width:900px){.nav-links{display:none;}.nav-toggle{display:block;}.mission-grid{grid-template-columns:1fr;gap:40px;}.story-grid{grid-template-columns:1fr;gap:40px;}.stack-grid{grid-template-columns:1fr 1fr;}.cta-band{flex-direction:column;padding:36px;}}
+    @media(max-width:600px){.stack-grid{grid-template-columns:1fr;}}
 
-    footer { background: #080c12; border-top: 1px solid var(--rule); padding: 64px 0 32px; }
-    .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-    .footer-logo img { height: 56px; width: 176px; object-fit: contain; object-position: left center; margin-bottom: 14px; display: block; filter: brightness(100); }
-    .footer-about { font-size: 0.83rem; color: var(--muted); line-height: 1.75; max-width: 260px; }
-    .footer-col h5 { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
-    .footer-col ul { list-style: none; }
-    .footer-col li { margin-bottom: 9px; }
-    .footer-col a { font-size: 0.85rem; color: var(--offwhite); transition: color 0.2s; }
-    .footer-col a:hover { color: var(--blue-light); }
-    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 28px; border-top: 1px solid var(--rule); }
-    .footer-bottom p { font-size: 0.78rem; color: var(--muted); }
-    .footer-socials { display: flex; gap: 20px; }
-    .footer-socials a { font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; transition: color 0.2s; }
-    .footer-socials a:hover { color: var(--blue-light); }
-    @media (max-width: 960px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
-    @media (max-width: 600px) { .container { padding: 0 20px; } .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
+    footer{background:var(--ink);padding:72px 0 32px;}
+    .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px;}
+    .footer-logo img{height:72px;width:220px;object-fit:contain;object-position:left center;filter:brightness(100);margin-bottom:12px;}
+    .footer-tagline{font-family:var(--font-h);font-style:italic;font-size:.95rem;color:rgba(255,255,255,.28);margin-bottom:10px;}
+    .footer-about{font-size:.83rem;color:rgba(255,255,255,.42);line-height:1.75;max-width:260px;}
+    .footer-col h5{font-size:.67rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:16px;}
+    .footer-col ul{list-style:none;}
+    .footer-col li{margin-bottom:9px;}
+    .footer-col a{font-size:.85rem;color:rgba(255,255,255,.52);transition:color .2s;}
+    .footer-col a:hover{color:#fff;}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08);}
+    .footer-bottom p{font-size:.78rem;color:rgba(255,255,255,.28);}
+    .footer-socials{display:flex;gap:20px;}
+    .footer-socials a{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);transition:color .2s;}
+    .footer-socials a:hover{color:rgba(255,255,255,.75);}
+    @media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}}
+    @media(max-width:600px){.container{padding:0 20px;}.section{padding:72px 0;}.footer-grid{grid-template-columns:1fr;}.footer-bottom{flex-direction:column;text-align:center;}}
   </style>
 </head>
-<body>
-<nav id="navbar">
+<body><nav id="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><img src="PAL_FORGE-Horizontal-RGB-Color-LG.png" alt="Pal Forge IT Solutions" /></a>
     <div class="nav-links">
       <a href="index.html#services">Services</a>
-      <a href="about.html"class="active">About</a>
+      <a href="about.html">About</a>
       <a href="index.html#pricing">Pricing</a>
       <a href="blog/index.html">Blog</a>
       <a href="index.html#contact" class="btn btn-primary nav-cta">Free Assessment</a>
     </div>
-    <button class="nav-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <button class="nav-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
@@ -130,40 +150,43 @@
   <a href="about.html" onclick="closeMobile()">About</a>
   <a href="index.html#pricing" onclick="closeMobile()">Pricing</a>
   <a href="blog/index.html" onclick="closeMobile()">Blog</a>
-  <a href="index.html#contact" onclick="closeMobile()">Free Assessment</a>
+  <a href="index.html#contact" onclick="closeMobile()">Get a Free Assessment</a>
 </div>
+
 <section class="page-hero">
   <div class="container">
     <div class="page-hero-content reveal">
-      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>About</div>
-      <div class="section-label">Who We Are</div>
-      <h1 class="page-title">Built to Give Small Businesses<br><span>Enterprise-Grade IT.</span></h1>
-      <p class="page-sub">Pal Forge IT Solutions was founded on a straightforward premise: Denver businesses deserve the same quality of technology and security that large enterprises take for granted, at a price that makes sense for their size.</p>
+      <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">/</span>About</div>
+      <div class="label">Who We Are</div>
+      <h1 class="page-title">Built to Give Businesses<br><span>Enterprise-Grade IT.</span></h1>
+      <p class="page-sub">Pal Forge IT Solutions was founded on a straightforward premise: businesses deserve the same quality of technology and security that large enterprises take for granted, at a price that makes sense for their size.</p>
     </div>
   </div>
 </section>
+
 <section class="section">
   <div class="container">
     <div class="mission-grid">
       <div class="mission-left reveal">
-        <div class="section-label">Our Mission</div>
-        <h2>Technology Should Be a Business Advantage, Not a Liability.</h2>
-        <p>Too many Denver businesses are running on outdated systems, minimal security, and reactive IT support that only shows up when something breaks. We built Pal Forge IT to change that.</p>
+        <div class="label">Our Mission</div>
+        <h2>Technology Should Be an Advantage, Not a Liability.</h2>
+        <p>Too many businesses are running on outdated systems, minimal security, and reactive IT support that only shows up when something breaks. We built Pal Forge IT to change that.</p>
         <p>Our mission is to provide proactive, transparent, and accountable managed IT services that let business owners focus on what they actually built their company to do.</p>
         <p>We are not a call center. We are not a break-fix shop. We are a long-term technology partner that measures our success by how little your technology gets in your way.</p>
       </div>
       <div class="values-stack reveal">
-        <div class="value-cell"><div class="value-label">Value 01</div><h4>Proactive Over Reactive</h4><p>Problems should be caught before you notice them, not after they cost you money. We monitor, maintain, and secure your environment continuously.</p></div>
-        <div class="value-cell"><div class="value-label">Value 02</div><h4>Transparency in Everything</h4><p>Clear pricing, clear scope, clear communication. No jargon designed to keep you dependent on us. You always know what you are paying for and why.</p></div>
-        <div class="value-cell"><div class="value-label">Value 03</div><h4>Real Accountability</h4><p>We commit to measurable standards — 15-minute response times, 99.9% uptime targets — and we stand behind them. Your business depends on us delivering.</p></div>
-        <div class="value-cell"><div class="value-label">Value 04</div><h4>Partnership, Not Vendor Dependence</h4><p>We build your IT roadmap around your growth, not our upsell pipeline. If a recommendation is not in your best interest, we will not make it.</p></div>
+        <div class="value-cell"><div class="value-label">Value 01</div><h4>Proactive Over Reactive</h4><p>Problems should be caught before you notice them. We monitor, maintain, and secure your environment continuously.</p></div>
+        <div class="value-cell"><div class="value-label">Value 02</div><h4>Transparency in Everything</h4><p>Clear pricing, clear scope, clear communication. No jargon designed to keep you dependent on us.</p></div>
+        <div class="value-cell"><div class="value-label">Value 03</div><h4>Real Accountability</h4><p>We commit to measurable standards — 15-minute response times, 99.9% uptime targets — and stand behind them.</p></div>
+        <div class="value-cell"><div class="value-label">Value 04</div><h4>Partnership, Not Vendor Dependence</h4><p>We build your IT roadmap around your growth. If a recommendation is not in your best interest, we will not make it.</p></div>
       </div>
     </div>
   </div>
 </section>
-<section class="section" style="background:var(--ink2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);">
+
+<section class="section section--gray" style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div class="container">
-    <div class="section-label reveal">Our Story</div>
+    <div class="label reveal">Our Story</div>
     <div class="story-grid">
       <div class="reveal">
         <div class="story-stat"><div class="story-stat-label">Founded</div><div class="story-stat-num">2024</div><div class="story-stat-desc">Denver, Colorado</div></div>
@@ -172,45 +195,44 @@
       </div>
       <div class="story-body reveal">
         <h3>How Pal Forge IT Started</h3>
-        <p>Pal Forge IT Solutions was built out of a direct frustration with how most IT providers operate. The pattern was always the same — businesses would call for help only after something broke, pay emergency rates to get patched back together, and then go right back to running on systems that were one bad day away from the next incident.</p>
-        <p>The businesses being hurt most were small and mid-sized operations in Denver — companies with real revenue, real employees, and real exposure — who did not have the budget for an enterprise IT department but were being treated as afterthoughts by large MSPs chasing bigger contracts.</p>
-        <p>Pal Forge IT was built specifically for those businesses. Deploy enterprise-grade tools, manage them proactively so problems get caught before they cause damage, and charge a flat monthly rate so there are no surprises.</p>
-        <h3>Why Denver</h3>
-        <p>Denver's business community is growing fast. New companies are standing up every year, established businesses are scaling, and the demand for reliable IT infrastructure is real. But the options are often limited to large enterprise firms that treat small businesses as afterthoughts, or small one-person operations that cannot provide consistent coverage.</p>
-        <p>Pal Forge IT was designed to fill that gap — bringing enterprise-grade tools, processes, and accountability to businesses that have been underserved by both ends of the market.</p>
+        <p>Pal Forge IT Solutions was built out of a direct frustration with how most IT providers operate. The pattern was always the same — businesses would call for help only after something broke, pay emergency rates to get patched back together, and go right back to running on systems one bad day away from the next incident.</p>
+        <p>The businesses being hurt most were small and mid-sized operations with real revenue, real employees, and real exposure — who did not have the budget for an enterprise IT department but were being treated as afterthoughts by large MSPs chasing bigger contracts. Pal Forge IT was built specifically for those businesses.</p>
         <h3>What We Do Differently</h3>
-        <p>From day one, we built our service delivery around a layered security and monitoring stack that most MSPs our size do not offer. We invested in the right tools — Huntress for managed detection and response, SentinelOne for endpoint protection, Vanta for compliance automation, Druva for backup — so our clients have access to the same technology that large enterprise IT departments rely on.</p>
+        <p>From day one, we built our service delivery around a layered security and monitoring stack that most MSPs our size do not offer. We invested in the right tools — Huntress for managed detection and response, SentinelOne for endpoint protection, Vanta for compliance automation, Druva for backup — so our clients have access to the same technology large enterprise IT departments rely on.</p>
         <p>We also committed to response time standards we hold ourselves to in writing. A 15-minute guaranteed response is not a marketing claim. It is a service level we built our entire operation around.</p>
       </div>
     </div>
   </div>
 </section>
+
 <section class="section">
   <div class="container">
-    <div class="section-label reveal">Our Technology Stack</div>
-    <h2 class="reveal" style="font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:12px;">Enterprise Tools. <span style="color:var(--blue-light);">SMB Pricing.</span></h2>
-    <p class="reveal" style="font-size:1rem;color:var(--offwhite);max-width:560px;">We have invested in the same platforms that Fortune 500 IT teams use, so your business benefits from best-in-class technology without the enterprise-sized budget.</p>
+    <div class="label reveal">Our Technology Stack</div>
+    <h2 class="h2 reveal">Enterprise Tools. <em>SMB Pricing.</em></h2>
+    <p class="lead reveal" style="max-width:560px;">We invested in the same platforms Fortune 500 IT teams use, so your business gets best-in-class technology without the enterprise-sized budget.</p>
     <div class="stack-grid">
-      <div class="stack-cell reveal"><div class="stack-category">Security</div><div class="stack-tools"><div class="stack-tool">Huntress MDR</div><div class="stack-tool">SentinelOne EDR</div><div class="stack-tool">Sophos</div><div class="stack-tool">EasyDMARC</div></div></div>
-      <div class="stack-cell reveal"><div class="stack-category">Management</div><div class="stack-tools"><div class="stack-tool">Syncro RMM / PSA</div><div class="stack-tool">Proxmox</div><div class="stack-tool">Ubiquiti</div><div class="stack-tool">n8n Automation</div></div></div>
-      <div class="stack-cell reveal"><div class="stack-category">Compliance and Backup</div><div class="stack-tools"><div class="stack-tool">Vanta</div><div class="stack-tool">Druva</div></div></div>
-      <div class="stack-cell reveal"><div class="stack-category">Productivity</div><div class="stack-tools"><div class="stack-tool">Microsoft 365</div><div class="stack-tool">Google Workspace</div><div class="stack-tool">Dialpad</div></div></div>
+      <div class="stack-cell reveal"><div class="stack-cat">Security</div><div class="stack-tools"><div class="stack-tool">Huntress MDR</div><div class="stack-tool">SentinelOne EDR</div><div class="stack-tool">Sophos</div><div class="stack-tool">EasyDMARC</div></div></div>
+      <div class="stack-cell reveal"><div class="stack-cat">Management</div><div class="stack-tools"><div class="stack-tool">Syncro RMM / PSA</div><div class="stack-tool">Proxmox</div><div class="stack-tool">Ubiquiti</div><div class="stack-tool">n8n Automation</div></div></div>
+      <div class="stack-cell reveal"><div class="stack-cat">Compliance and Backup</div><div class="stack-tools"><div class="stack-tool">Vanta</div><div class="stack-tool">Druva</div></div></div>
+      <div class="stack-cell reveal"><div class="stack-cat">Productivity</div><div class="stack-tools"><div class="stack-tool">Microsoft 365</div><div class="stack-tool">Google Workspace</div><div class="stack-tool">Dialpad</div></div></div>
     </div>
     <div class="cta-band reveal">
-      <h2>Ready to Work With a Team That Treats Your IT Like It Matters? <span>Let's Talk.</span></h2>
+      <h2>Ready to Work With a Team That <em>Actually Delivers?</em></h2>
       <div class="cta-actions">
-        <a href="index.html#contact" class="btn btn-primary">Request a Free Assessment</a>
-        <a href="tel:+13039709081" class="btn btn-outline">(303) 970-9081</a>
+        <a href="index.html#contact" class="btn btn-white">Request a Free Assessment</a>
+        <a href="tel:+13039709081" class="btn" style="background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.25);">(303) 970-9081</a>
       </div>
     </div>
   </div>
 </section>
+
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div>
         <div class="footer-logo"><img src="PAL_FORGE-Horizontal-RGB-Color-LG.png" alt="Pal Forge IT Solutions" /></div>
-        <p class="footer-about">Enterprise-grade managed IT services and cybersecurity for Denver businesses. Proactive support. Predictable pricing. Real accountability.</p>
+        <div class="footer-tagline">The Solution you start with,<br>The Partner you scale with.</div>
+        <p class="footer-about">Enterprise-grade managed IT and cybersecurity for businesses nationwide. Proactive support. Predictable pricing. Real accountability.</p>
       </div>
       <div class="footer-col"><h5>Services</h5><ul>
         <li><a href="services/managed-it.html">Managed IT Services</a></li>
@@ -232,7 +254,7 @@
       <div class="footer-col"><h5>Contact</h5><ul>
         <li><a href="tel:+13039709081">(303) 970-9081</a></li>
         <li><a href="mailto:sales@palforgeit.com">sales@palforgeit.com</a></li>
-        <li><span style="font-size:0.85rem;color:var(--muted);">Denver, Colorado</span></li>
+        <li><span style="font-size:.85rem;color:rgba(255,255,255,.35);">Denver, Colorado</span></li>
       </ul></div>
     </div>
     <div class="footer-bottom">
@@ -247,20 +269,35 @@
   </div>
 </footer>
 <script>
-  var navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', function() { navbar.classList.toggle('scrolled', window.scrollY > 30); });
-  document.getElementById('menuToggle').addEventListener('click', function() { document.getElementById('mobileMenu').classList.toggle('open'); });
-  function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
-
-  // Reveal animation: show above-fold immediately, animate rest on scroll
-  (function() {
-    var vh = window.innerHeight;
-    document.querySelectorAll('.reveal').forEach(function(el) {
-      if (el.getBoundingClientRect().top < vh - 40) { el.classList.add('in'); }
+(function(){
+  var nav=document.getElementById('nav');
+  if(nav) window.addEventListener('scroll',function(){nav.classList.toggle('nav--scrolled',window.scrollY>20);});
+  var mt=document.getElementById('menuToggle');
+  if(mt) mt.addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('open');});
+  window.closeMobile=function(){var m=document.getElementById('mobileMenu');if(m)m.classList.remove('open');};
+  var vh=window.innerHeight;
+  document.querySelectorAll('.reveal').forEach(function(el){
+    if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
+  });
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e,i){
+      if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
     });
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e, i) {
-        if (e.isIntersecting) {
-          setTimeout(function() { e.target.classList.add('in'); }, i * 60);
+  },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+  var form=document.getElementById('contactForm');
+  if(form){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var action=form.getAttribute('action');
+      var success=document.getElementById('formSuccess');
+      if(action.indexOf('YOUR_FORM_ID')!==-1){success.style.display='block';form.reset();return;}
+      fetch(action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
+        .then(function(r){if(r.ok){success.style.display='block';form.reset();}})
+        .catch(function(err){console.error(err);});
+    });
+  }
+})();
+</script>
 </body>
 </html>
