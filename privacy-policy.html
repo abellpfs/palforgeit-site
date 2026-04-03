@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy | Pal Forge IT Solutions</title>
-  <meta name="description" content="Privacy policy for Pal Forge IT Solutions. How we collect, use, and protect your information." />
+  <meta name="description" content="Privacy policy for Pal Forge IT Solutions." />
   <meta name="robots" content="noindex, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    
+
     :root {
       --blue: #114EA1; --blue-mid: #3E79B2; --blue-light: #5B9BD5;
       --ink: #0D1117; --ink2: #131920; --ink3: #1a2332;
@@ -24,6 +23,9 @@
     .container { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
     .section { padding: 96px 0; }
     a { color: inherit; text-decoration: none; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
     .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font); font-weight: 600; font-size: 0.875rem; padding: 14px 28px; cursor: pointer; border: none; transition: all 0.2s ease; border-radius: 6px; }
     .btn-primary { background: var(--blue); color: #fff; box-shadow: 0 4px 20px rgba(17,78,161,0.3); }
     .btn-primary:hover { background: #1560c0; transform: translateY(-1px); }
@@ -43,40 +45,22 @@
     .mobile-menu.open { display: flex; }
     .mobile-menu a { font-size: 1.4rem; font-weight: 700; color: var(--white); padding: 14px 0; border-bottom: 1px solid var(--rule); }
     .mobile-menu a:last-child { color: var(--blue-light); border: none; margin-top: 12px; }
-    .page-hero { padding: 148px 0 64px; background: linear-gradient(160deg, #0D1117 0%, #0f1825 55%, #0D1117 100%); border-bottom: 1px solid var(--rule); position: relative; overflow: hidden; }
-    .page-hero::before { content: ''; position: absolute; top: 0; right: 15%; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent, var(--rule2) 25%, var(--rule2) 75%, transparent); }
-    .page-hero::after { content: ''; position: absolute; top: 0; right: 35%; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent, var(--rule) 25%, var(--rule) 75%, transparent); }
-    .page-hero-content { position: relative; z-index: 1; max-width: 720px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font); font-weight: 600; font-size: 0.875rem; padding: 14px 28px; cursor: pointer; border: none; border-radius: 6px; }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .page-hero { padding: 148px 0 64px; background: linear-gradient(160deg, #0D1117 0%, #0f1825 55%, #0D1117 100%); border-bottom: 1px solid var(--rule); }
+    .page-hero-content { max-width: 720px; }
     .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--muted); margin-bottom: 28px; }
-    .breadcrumb a:hover { color: var(--blue-light); }
-    .breadcrumb span { color: var(--rule2); }
-    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 12px; }
-    .page-title { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 20px; }
-    .page-title span { color: var(--blue-light); }
-    .page-sub { font-size: 1.05rem; color: var(--offwhite); line-height: 1.75; max-width: 580px; }
-    .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-    .overview-left h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 20px; }
-    .overview-left p { font-size: 0.95rem; color: var(--offwhite); line-height: 1.8; margin-bottom: 16px; }
-    .plan-card { background: var(--ink2); border: 1px solid var(--rule2); border-radius: 12px; padding: 32px; position: relative; overflow: hidden; }
-    .plan-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--blue), var(--blue-light)); }
-    .plan-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-light); margin-bottom: 12px; }
-    .plan-name { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
-    .plan-price { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.03em; color: var(--blue-light); margin-bottom: 4px; }
-    .plan-note { font-size: 0.8rem; color: var(--muted); margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
-    .includes-list { border-top: 1px solid var(--rule); margin-top: 48px; }
-    .include-row { display: grid; grid-template-columns: 40px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--rule); align-items: start; }
-    .include-num { font-size: 0.75rem; font-weight: 700; color: var(--blue-mid); padding-top: 2px; }
-    .include-content h4 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.01em; }
-    .include-content p { font-size: 0.87rem; color: var(--muted); line-height: 1.65; }
-    .faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; margin-top: 48px; }
-    .faq-item { background: var(--ink2); padding: 28px 32px; transition: background 0.2s; cursor: pointer; }
-    .faq-item:hover { background: var(--ink3); }
-    .faq-q { font-size: 1rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
-    .faq-a { font-size: 0.88rem; color: var(--muted); line-height: 1.75; }
-    .cta-band { background: var(--ink2); border: 1px solid var(--rule2); border-radius: 16px; padding: 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; margin-top: 80px; }
-    .cta-band h2 { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 800; letter-spacing: -0.02em; max-width: 480px; line-height: 1.2; }
-    .cta-band h2 span { color: var(--blue-light); }
-    .cta-actions { display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0; }
+    .breadcrumb a:hover { color: var(--blue-light); } .breadcrumb span { color: var(--rule2); }
+    .page-title { font-size: clamp(2rem,5vw,3.4rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .prose { max-width: 760px; }
+    .prose h2 { font-size: 1.3rem; font-weight: 700; margin: 36px 0 12px; }
+    .prose p { font-size: 0.95rem; color: var(--offwhite); line-height: 1.85; margin-bottom: 16px; }
+    .prose ul { margin: 0 0 16px 20px; }
+    .prose li { font-size: 0.95rem; color: var(--offwhite); line-height: 1.75; margin-bottom: 6px; }
+    .prose a { color: var(--blue-light); text-decoration: underline; }
+    @media (max-width: 900px) { .nav-links { display: none; } .nav-toggle { display: block; } }
+    @media (max-width: 600px) { .container { padding: 0 20px; } }
+
     footer { background: #080c12; border-top: 1px solid var(--rule); padding: 64px 0 32px; }
     .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
     .footer-logo img { height: 56px; width: 176px; object-fit: contain; object-position: left center; margin-bottom: 14px; display: block; filter: brightness(100); }
@@ -91,17 +75,8 @@
     .footer-socials { display: flex; gap: 20px; }
     .footer-socials a { font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; transition: color 0.2s; }
     .footer-socials a:hover { color: var(--blue-light); }
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
-    .reveal.in { opacity: 1; transform: none; }
-    
-    @media (max-width: 900px) { .nav-links { display: none; } .nav-toggle { display: block; } .overview-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } .cta-band { flex-direction: column; padding: 32px; } }
-    @media (max-width: 600px) { .container { padding: 0 20px; } .section { padding: 72px 0; } .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
-
-    .prose h2 { font-size: 1.3rem; font-weight: 700; margin: 36px 0 12px; letter-spacing: -0.01em; }
-    .prose p { font-size: 0.95rem; color: var(--offwhite); line-height: 1.85; margin-bottom: 16px; }
-    .prose ul { margin: 0 0 16px 20px; }
-    .prose li { font-size: 0.95rem; color: var(--offwhite); line-height: 1.75; margin-bottom: 6px; }
-    .prose a { color: var(--blue-light); text-decoration: underline; }
+    @media (max-width: 960px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+    @media (max-width: 600px) { .container { padding: 0 20px; } .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
   </style>
 </head>
 <body>
@@ -125,69 +100,49 @@
   <a href="blog/index.html" onclick="closeMobile()">Blog</a>
   <a href="index.html#contact" onclick="closeMobile()">Free Assessment</a>
 </div>
-
 <section class="page-hero">
   <div class="container">
     <div class="page-hero-content reveal">
       <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Privacy Policy</div>
       <h1 class="page-title">Privacy Policy</h1>
-      <p class="page-sub">Last updated: January 2025</p>
+      <p style="color:var(--muted);font-size:0.85rem;">Last updated: January 2025</p>
     </div>
   </div>
 </section>
-
-<section class="section">
+<section style="padding:80px 0 96px;">
   <div class="container">
-    <div style="max-width:760px;" class="prose reveal">
+    <div class="prose reveal">
       <h2>Overview</h2>
-      <p>Pal Forge IT Solutions, LLC ("Pal Forge IT," "we," "our," or "us") is committed to protecting your privacy. This Privacy Policy describes how we collect, use, and handle information when you visit palforgeit.com or contact us about our services.</p>
-
+      <p>Pal Forge IT Solutions, LLC is committed to protecting your privacy. This Privacy Policy describes how we collect, use, and handle information when you visit palforgeit.com or contact us about our services.</p>
       <h2>Information We Collect</h2>
       <p>We collect information you provide directly to us, including:</p>
       <ul>
         <li>Name, company name, email address, and phone number when you submit our contact form</li>
-        <li>Information about your IT environment and business needs when you request a consultation or assessment</li>
+        <li>Information about your IT environment and business needs when you request a consultation</li>
         <li>Communications you send to us by email or phone</li>
       </ul>
       <p>We do not use cookies for tracking, advertising, or analytics on this website. We do not use third-party advertising networks.</p>
-
       <h2>How We Use Your Information</h2>
       <p>We use the information you provide to respond to your inquiries, schedule consultations and assessments, provide managed IT services if you become a client, and send service-related communications. We do not sell, rent, or share your personal information with third parties for their marketing purposes.</p>
-
       <h2>Contact Form Data</h2>
-      <p>Contact form submissions on this site are processed through Formspree, a third-party form processing service. Submissions are transmitted securely and delivered to our business email. Formspree's privacy policy governs how they handle form data in transit.</p>
-
-      <h2>Client Data</h2>
-      <p>If you become a managed IT client of Pal Forge IT Solutions, data handling is governed by your service agreement and, where applicable, a Business Associate Agreement. We take the security and confidentiality of client data seriously and implement appropriate technical and administrative safeguards.</p>
-
+      <p>Contact form submissions are processed through Formspree, a third-party form processing service. Submissions are transmitted securely and delivered to our business email.</p>
       <h2>Data Retention</h2>
-      <p>We retain contact form submissions and inquiry communications for as long as necessary to respond to your inquiry and for a reasonable period thereafter for business records purposes. Client data retention is governed by the applicable service agreement.</p>
-
+      <p>We retain contact form submissions and inquiry communications for as long as necessary to respond to your inquiry and for a reasonable period thereafter for business records purposes.</p>
       <h2>Your Rights</h2>
-      <p>You may request access to, correction of, or deletion of personal information we hold about you by contacting us at <a href="/cdn-cgi/l/email-protection#93e0f2fff6e0d3e3f2fff5fce1f4f6fae7bdf0fcfe"><span class="__cf_email__" data-cfemail="bac9dbd6dfc9facadbd6dcd5c8dddfd3ce94d9d5d7">[email&#160;protected]</span></a>. We will respond to reasonable requests within 30 days.</p>
-
-      <h2>Security</h2>
-      <p>We implement reasonable technical and organizational measures to protect your information. However, no method of transmission over the internet is completely secure, and we cannot guarantee absolute security.</p>
-
+      <p>You may request access to, correction of, or deletion of personal information we hold about you by contacting us at <a href="mailto:sales@palforgeit.com">sales@palforgeit.com</a>. We will respond to reasonable requests within 30 days.</p>
       <h2>Changes to This Policy</h2>
-      <p>We may update this Privacy Policy from time to time. We will post the updated policy on this page with a revised effective date. Continued use of our website after changes are posted constitutes acceptance of the updated policy.</p>
-
+      <p>We may update this Privacy Policy from time to time. Continued use of our website after changes are posted constitutes acceptance of the updated policy.</p>
       <h2>Contact Us</h2>
-      <p>If you have questions about this Privacy Policy, contact us at:</p>
-      <p>Pal Forge IT Solutions, LLC<br>
-      <a href="/cdn-cgi/l/email-protection#295a48454c5a695948454f465b4e4c405d074a4644"><span class="__cf_email__" data-cfemail="3e4d5f525b4d7e4e5f5258514c595b574a105d5153">[email&#160;protected]</span></a><br>
-      <a href="tel:+13039709081">(303) 970-9081</a><br>
-      Denver, Colorado</p>
+      <p>Pal Forge IT Solutions, LLC<br><a href="mailto:sales@palforgeit.com">sales@palforgeit.com</a><br><a href="tel:+13039709081">(303) 970-9081</a><br>Denver, Colorado</p>
     </div>
   </div>
 </section>
-
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div>
         <div class="footer-logo"><img src="PAL_FORGE-Horizontal-RGB-Color-LG.png" alt="Pal Forge IT Solutions" /></div>
-        <p class="footer-about">Enterprise-grade managed IT services and cybersecurity for Denver businesses.</p>
+        <p class="footer-about">Enterprise-grade managed IT services and cybersecurity for Denver businesses. Proactive support. Predictable pricing. Real accountability.</p>
       </div>
       <div class="footer-col"><h5>Services</h5><ul>
         <li><a href="services/managed-it.html">Managed IT Services</a></li>
@@ -196,6 +151,8 @@
         <li><a href="services/backup.html">Backup and Recovery</a></li>
         <li><a href="services/network.html">Network Solutions</a></li>
         <li><a href="services/compliance.html">HIPAA Compliance</a></li>
+        <li><a href="services/it-consultation.html">IT Consultation</a></li>
+        <li><a href="services/nvr.html">NVR Solutions</a></li>
       </ul></div>
       <div class="footer-col"><h5>Company</h5><ul>
         <li><a href="about.html">About Us</a></li>
@@ -206,7 +163,7 @@
       </ul></div>
       <div class="footer-col"><h5>Contact</h5><ul>
         <li><a href="tel:+13039709081">(303) 970-9081</a></li>
-        <li><a href="/cdn-cgi/l/email-protection#4c3f2d20293f0c3c2d202a233e2b292538622f2321"><span class="__cf_email__" data-cfemail="592a38353c2a192938353f362b3e3c302d773a3634">[email&#160;protected]</span></a></li>
+        <li><a href="mailto:sales@palforgeit.com">sales@palforgeit.com</a></li>
         <li><span style="font-size:0.85rem;color:var(--muted);">Denver, Colorado</span></li>
       </ul></div>
     </div>
@@ -216,11 +173,40 @@
         <a href="https://linkedin.com/company/palforgeit" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://facebook.com/palforgeit" target="_blank" rel="noopener">Facebook</a>
         <a href="https://instagram.com/palforgeit" target="_blank" rel="noopener">Instagram</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
       </div>
     </div>
   </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 30));
-  document.getElementById('m
+<script>
+  var navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function() { navbar.classList.toggle('scrolled', window.scrollY > 30); });
+  document.getElementById('menuToggle').addEventListener('click', function() { document.getElementById('mobileMenu').classList.toggle('open'); });
+  function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  // Reveal animation: show above-fold immediately, animate rest on scroll
+  (function() {
+    var vh = window.innerHeight;
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      if (el.getBou
+<script>
+  (function() {
+    var nav = document.getElementById('nav') || document.getElementById('navbar');
+    if (nav) window.addEventListener('scroll', function() { nav.classList.toggle('nav--scrolled', window.scrollY > 20); nav.classList.toggle('scrolled', window.scrollY > 20); });
+    var mt = document.getElementById('menuToggle');
+    if (mt) mt.addEventListener('click', function() { document.getElementById('mobileMenu').classList.toggle('open'); });
+    window.closeMobile = function() { var m = document.getElementById('mobileMenu'); if(m) m.classList.remove('open'); };
+    var vh = window.innerHeight;
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      if (el.getBoundingClientRect().top < vh - 40) { el.classList.add('in'); }
+    });
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e, i) {
+        if (e.isIntersecting) { setTimeout(function() { e.target.classList.add('in'); }, i * 55); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal:not(.in)').forEach(function(el) { obs.observe(el); });
+  })();
+</script>
+</body>
+</html>

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NVR Security Camera Solutions Denver | Pal Forge IT Solutions</title>
   <meta name="description" content="Network video recording and IP security camera systems for Denver businesses. Professional installation, remote monitoring, and ongoing support. Pal Forge IT Solutions." />
   <meta name="robots" content="index, follow" />
@@ -11,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
+
     :root {
       --blue: #114EA1; --blue-mid: #3E79B2; --blue-light: #5B9BD5;
       --ink: #0D1117; --ink2: #131920; --ink3: #1a2332;
@@ -24,6 +24,9 @@
     .container { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
     .section { padding: 96px 0; }
     a { color: inherit; text-decoration: none; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
     .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font); font-weight: 600; font-size: 0.875rem; padding: 14px 28px; cursor: pointer; border: none; transition: all 0.2s ease; border-radius: 6px; }
     .btn-primary { background: var(--blue); color: #fff; box-shadow: 0 4px 20px rgba(17,78,161,0.3); }
     .btn-primary:hover { background: #1560c0; transform: translateY(-1px); }
@@ -43,40 +46,50 @@
     .mobile-menu.open { display: flex; }
     .mobile-menu a { font-size: 1.4rem; font-weight: 700; color: var(--white); padding: 14px 0; border-bottom: 1px solid var(--rule); }
     .mobile-menu a:last-child { color: var(--blue-light); border: none; margin-top: 12px; }
+
     .page-hero { padding: 148px 0 64px; background: linear-gradient(160deg, #0D1117 0%, #0f1825 55%, #0D1117 100%); border-bottom: 1px solid var(--rule); position: relative; overflow: hidden; }
     .page-hero::before { content: ''; position: absolute; top: 0; right: 15%; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent, var(--rule2) 25%, var(--rule2) 75%, transparent); }
     .page-hero::after { content: ''; position: absolute; top: 0; right: 35%; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent, var(--rule) 25%, var(--rule) 75%, transparent); }
     .page-hero-content { position: relative; z-index: 1; max-width: 720px; }
-    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--muted); margin-bottom: 28px; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--muted); margin-bottom: 28px; flex-wrap: wrap; }
     .breadcrumb a:hover { color: var(--blue-light); }
     .breadcrumb span { color: var(--rule2); }
     .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 12px; }
     .page-title { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 20px; }
     .page-title span { color: var(--blue-light); }
     .page-sub { font-size: 1.05rem; color: var(--offwhite); line-height: 1.75; max-width: 580px; }
-    .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-    .overview-left h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 20px; }
-    .overview-left p { font-size: 0.95rem; color: var(--offwhite); line-height: 1.8; margin-bottom: 16px; }
-    .plan-card { background: var(--ink2); border: 1px solid var(--rule2); border-radius: 12px; padding: 32px; position: relative; overflow: hidden; }
-    .plan-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--blue), var(--blue-light)); }
-    .plan-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-light); margin-bottom: 12px; }
-    .plan-name { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
-    .plan-price { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.03em; color: var(--blue-light); margin-bottom: 4px; }
-    .plan-note { font-size: 0.8rem; color: var(--muted); margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
-    .includes-list { border-top: 1px solid var(--rule); margin-top: 48px; }
-    .include-row { display: grid; grid-template-columns: 40px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--rule); align-items: start; }
-    .include-num { font-size: 0.75rem; font-weight: 700; color: var(--blue-mid); padding-top: 2px; }
-    .include-content h4 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.01em; }
-    .include-content p { font-size: 0.87rem; color: var(--muted); line-height: 1.65; }
-    .faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; margin-top: 48px; }
-    .faq-item { background: var(--ink2); padding: 28px 32px; transition: background 0.2s; cursor: pointer; }
-    .faq-item:hover { background: var(--ink3); }
-    .faq-q { font-size: 1rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
-    .faq-a { font-size: 0.88rem; color: var(--muted); line-height: 1.75; }
-    .cta-band { background: var(--ink2); border: 1px solid var(--rule2); border-radius: 16px; padding: 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; margin-top: 80px; }
-    .cta-band h2 { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 800; letter-spacing: -0.02em; max-width: 480px; line-height: 1.2; }
-    .cta-band h2 span { color: var(--blue-light); }
-    .cta-actions { display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0; }
+
+    .btn {{ display: inline-flex; align-items: center; gap: 8px; font-family: var(--font); font-weight: 600; font-size: 0.875rem; padding: 14px 28px; cursor: pointer; border: none; transition: all 0.2s ease; border-radius: 6px; }}
+    .btn-primary {{ background: var(--blue); color: #fff; box-shadow: 0 4px 20px rgba(17,78,161,0.3); }}
+    .btn-primary:hover {{ background: #1560c0; transform: translateY(-1px); }}
+    .btn-outline {{ background: transparent; color: var(--white); border: 1.5px solid var(--rule2); border-radius: 6px; }}
+    .btn-outline:hover {{ border-color: var(--blue-mid); color: var(--blue-light); }}
+    .section-label {{ font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 12px; }}
+    .cta-band {{ background: var(--ink2); border: 1px solid var(--rule2); border-radius: 16px; padding: 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }}
+    .cta-band h2 {{ font-size: clamp(1.4rem,2.5vw,2rem); font-weight: 800; letter-spacing: -0.02em; max-width: 480px; line-height: 1.2; }}
+    .cta-band h2 span {{ color: var(--blue-light); }}
+    .cta-actions {{ display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0; }}
+    .overview-grid {{ display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }}
+    .overview-left h2 {{ font-size: clamp(1.6rem,3vw,2.2rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 20px; }}
+    .overview-left p {{ font-size: 0.95rem; color: var(--offwhite); line-height: 1.8; margin-bottom: 16px; }}
+    .plan-card {{ background: var(--ink2); border: 1px solid var(--rule2); border-radius: 12px; padding: 32px; position: relative; overflow: hidden; }}
+    .plan-card::before {{ content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--blue), var(--blue-light)); }}
+    .plan-label {{ font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-light); margin-bottom: 12px; }}
+    .plan-name {{ font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }}
+    .plan-price {{ font-size: 2.2rem; font-weight: 800; letter-spacing: -0.03em; color: var(--blue-light); margin-bottom: 4px; }}
+    .plan-note {{ font-size: 0.8rem; color: var(--muted); margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--rule); }}
+    .includes-list {{ border-top: 1px solid var(--rule); margin-top: 48px; }}
+    .include-row {{ display: grid; grid-template-columns: 40px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--rule); align-items: start; }}
+    .include-num {{ font-size: 0.75rem; font-weight: 700; color: var(--blue-mid); padding-top: 2px; }}
+    .include-content h4 {{ font-size: 1rem; font-weight: 700; margin-bottom: 6px; }}
+    .include-content p {{ font-size: 0.87rem; color: var(--muted); line-height: 1.65; }}
+    .faq-list {{ display: flex; flex-direction: column; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; margin-top: 48px; }}
+    .faq-item {{ background: var(--ink2); padding: 28px 32px; transition: background 0.2s; }}
+    .faq-item:hover {{ background: var(--ink3); }}
+    .faq-q {{ font-size: 1rem; font-weight: 700; margin-bottom: 10px; }}
+    .faq-a {{ font-size: 0.88rem; color: var(--muted); line-height: 1.75; }}
+    @media (max-width: 900px) {{ .nav-links {{ display: none; }} .nav-toggle {{ display: block; }} .overview-grid {{ grid-template-columns: 1fr; gap: 40px; }} .cta-band {{ flex-direction: column; padding: 32px; }} }}
+
     footer { background: #080c12; border-top: 1px solid var(--rule); padding: 64px 0 32px; }
     .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
     .footer-logo img { height: 56px; width: 176px; object-fit: contain; object-position: left center; margin-bottom: 14px; display: block; filter: brightness(100); }
@@ -91,19 +104,16 @@
     .footer-socials { display: flex; gap: 20px; }
     .footer-socials a { font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; transition: color 0.2s; }
     .footer-socials a:hover { color: var(--blue-light); }
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
-    .reveal.in { opacity: 1; transform: none; }
-    
-    @media (max-width: 900px) { .nav-links { display: none; } .nav-toggle { display: block; } .overview-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } .cta-band { flex-direction: column; padding: 32px; } }
-    @media (max-width: 600px) { .container { padding: 0 20px; } .section { padding: 72px 0; } .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
-</style>
+    @media (max-width: 960px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+    @media (max-width: 600px) { .container { padding: 0 20px; } .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
+  </style>
 </head>
 <body>
 <nav id="navbar">
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo"><img src="../PAL_FORGE-Horizontal-RGB-Color-LG.png" alt="Pal Forge IT Solutions" /></a>
     <div class="nav-links">
-      <a href="../index.html#services">Services</a>
+      <a href="../index.html#services"class="active">Services</a>
       <a href="../about.html">About</a>
       <a href="../index.html#pricing">Pricing</a>
       <a href="../blog/index.html">Blog</a>
@@ -119,7 +129,6 @@
   <a href="../blog/index.html" onclick="closeMobile()">Blog</a>
   <a href="../index.html#contact" onclick="closeMobile()">Free Assessment</a>
 </div>
-
 <section class="page-hero">
   <div class="container">
     <div class="page-hero-content reveal">
@@ -128,63 +137,56 @@
       <h1 class="page-title">Secure Your Premises With<br><span>Professional Surveillance.</span></h1>
       <p class="page-sub">Network video recording and IP camera systems designed, installed, and managed for Denver businesses. 24/7 recording, remote access, and intelligent monitoring that actually works.</p>
       <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;">
-        <a href="../index.html#contact" class="btn btn-primary">Get a Free Assessment</a>
+        <a href="../index.html#contact" class="btn btn-primary">Request a Free Assessment</a>
         <a href="tel:+13039709081" class="btn btn-outline">(303) 970-9081</a>
       </div>
     </div>
   </div>
 </section>
-
 <section class="section">
   <div class="container">
     <div class="overview-grid">
       <div class="overview-left reveal">
         <div class="section-label">Overview</div>
         <h2>A Security Camera System That Works When You Need It To.</h2>
-        <p>Consumer-grade cameras and DIY NVR setups fail in predictable ways — poor image quality in low light, storage that fills up and stops recording, systems that go offline and no one notices. When an incident happens, the footage is either missing or unusable.</p>
-        <p>We design and install commercial-grade IP camera systems built around reliable hardware and proper network infrastructure. Every installation is configured for continuous recording, remote access, and long-term storage — and integrated into your existing network so management is centralized.</p>
-        <p>Because we handle your network and IT infrastructure, your surveillance system is not a separate, disconnected piece. It is part of a cohesive environment we monitor and maintain alongside everything else.</p>
+        <p>Consumer-grade cameras and DIY NVR setups fail in predictable ways — poor image quality, storage that fills up and stops recording, systems that go offline unnoticed. When an incident happens, footage is either missing or unusable.</p><p>We design and install commercial-grade IP camera systems built around reliable hardware and proper network infrastructure, configured for continuous recording, remote access, and long-term storage.</p><p>Because we handle your network and IT infrastructure, your surveillance system is part of a cohesive environment we monitor alongside everything else.</p>
       </div>
       <div class="reveal">
         <div class="plan-card">
-          <div class="plan-label">Pricing</div>
-          <div class="plan-name">NVR Installation and Management</div>
+          <div class="plan-label">Included In</div>
+          <div class="plan-name">Standalone or Managed Plan</div>
           <div class="plan-price">Custom</div>
-          <div class="plan-note">Pricing based on camera count, site complexity, and storage requirements. Contact us for a site assessment and quote.</div>
+          <div class="plan-note">Pricing based on camera count, site complexity, and storage requirements.</div>
           <a href="../index.html#contact" class="btn btn-primary" style="width:100%;justify-content:center;">Request a Quote</a>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <section class="section" style="background:var(--ink2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);">
   <div class="container">
     <div class="section-label reveal">What Is Included</div>
-    <h2 class="reveal" style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;letter-spacing:-0.02em;max-width:540px;">Everything Covered Under This Service.</h2>
-    <div class="includes-list">
-      <div class="include-row reveal"><div class="include-num">01</div><div class="include-content"><h4>Site Assessment and Camera Placement Planning</h4><p>We walk your facility, identify coverage gaps and blind spots, and design a camera layout that provides meaningful coverage — not just maximum camera count.</p></div></div>
-      <div class="include-row reveal"><div class="include-num">02</div><div class="include-content"><h4>Commercial IP Camera Installation</h4><p>Professional installation of commercial-grade IP cameras with proper cabling, weatherproofing for exterior installations, and optimal positioning for image quality.</p></div></div>
-      <div class="include-row reveal"><div class="include-num">03</div><div class="include-content"><h4>NVR Configuration and Storage Setup</h4><p>Network video recorder setup with appropriate storage capacity for your retention requirements. Cameras configured for continuous recording with motion-triggered alerts.</p></div></div>
-      <div class="include-row reveal"><div class="include-num">04</div><div class="include-content"><h4>Remote Access Configuration</h4><p>Secure remote viewing setup so you can access live and recorded footage from any device, from anywhere — without exposing your system to unnecessary security risks.</p></div></div>
-      <div class="include-row reveal"><div class="include-num">05</div><div class="include-content"><h4>Network Integration</h4><p>Your surveillance system integrated into your existing network infrastructure with proper VLAN segmentation to keep camera traffic isolated from your primary business network.</p></div></div>
-      <div class="include-row reveal"><div class="include-num">06</div><div class="include-content"><h4>Ongoing Monitoring and Support</h4><p>System health monitoring included as part of your managed IT plan. Camera outages, storage issues, and connectivity problems are caught and addressed proactively.</p></div></div>
-    </div>
+    <h2 class="reveal" style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;letter-spacing:-0.02em;max-width:540px;margin-bottom:0;">Everything Covered Under This Service.</h2>
+    <div class="includes-list"><div class="include-row reveal"><div class="include-num">01</div><div class="include-content"><h4>Site Assessment and Camera Placement Planning</h4><p>We walk your facility, identify coverage gaps and blind spots, and design a layout that provides meaningful coverage.</p></div></div>
+<div class="include-row reveal"><div class="include-num">02</div><div class="include-content"><h4>Commercial IP Camera Installation</h4><p>Professional installation of commercial-grade IP cameras with proper cabling, weatherproofing, and optimal positioning.</p></div></div>
+<div class="include-row reveal"><div class="include-num">03</div><div class="include-content"><h4>NVR Configuration and Storage Setup</h4><p>Network video recorder setup with appropriate storage for your retention requirements and motion-triggered alerts.</p></div></div>
+<div class="include-row reveal"><div class="include-num">04</div><div class="include-content"><h4>Remote Access Configuration</h4><p>Secure remote viewing from any device, from anywhere, without exposing your system to unnecessary security risks.</p></div></div>
+<div class="include-row reveal"><div class="include-num">05</div><div class="include-content"><h4>Network Integration</h4><p>Surveillance system integrated into your existing network with proper VLAN segmentation to keep camera traffic isolated.</p></div></div>
+<div class="include-row reveal"><div class="include-num">06</div><div class="include-content"><h4>Ongoing Monitoring and Support</h4><p>System health monitoring included with your managed IT plan. Camera outages and connectivity problems caught proactively.</p></div></div>
+</div>
   </div>
 </section>
-
 <section class="section">
   <div class="container">
     <div class="section-label reveal">Common Questions</div>
     <h2 class="reveal" style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;letter-spacing:-0.02em;max-width:480px;margin-bottom:0;">Frequently Asked Questions.</h2>
-    <div class="faq-list">
-      <div class="faq-item reveal"><div class="faq-q">How long is footage stored?</div><div class="faq-a">Storage duration depends on the number of cameras, recording resolution, and motion activity at your location. We size your storage based on your specific retention requirements — typically 30, 60, or 90 days. We can also configure tiered storage to keep recent footage at full resolution and older footage at reduced resolution to extend retention.</div></div>
-      <div class="faq-item reveal"><div class="faq-q">Can we access footage remotely?</div><div class="faq-a">Yes. We configure secure remote access so you can view live feeds and review recorded footage from a smartphone, tablet, or computer. Access is protected with proper authentication so only authorized users can view your cameras.</div></div>
-      <div class="faq-item reveal"><div class="faq-q">Do you work with existing cameras?</div><div class="faq-a">It depends on what you have. Many consumer-grade systems are not compatible with commercial NVR infrastructure. We will assess your existing hardware and give you an honest recommendation — reuse what makes sense, replace what does not.</div></div>
-      <div class="faq-item reveal"><div class="faq-q">Is this available as a standalone service or does it require managed IT?</div><div class="faq-a">NVR installation is available as a standalone project. Ongoing monitoring and support is included if you are on a managed IT plan. Standalone clients can also purchase a separate support agreement for the surveillance system.</div></div>
-    </div>
-    <div class="cta-band reveal">
-      <h2>Ready to Secure Your Business? <span>Let's Talk.</span></h2>
+    <div class="faq-list"><div class="faq-item reveal"><div class="faq-q">How long is footage stored?</div><div class="faq-a">Storage duration depends on camera count, resolution, and motion activity. We typically configure 30, 60, or 90 day retention based on your requirements.</div></div>
+<div class="faq-item reveal"><div class="faq-q">Can we access footage remotely?</div><div class="faq-a">Yes. We configure secure remote access so you can view live feeds and recorded footage from a smartphone, tablet, or computer.</div></div>
+<div class="faq-item reveal"><div class="faq-q">Do you work with existing cameras?</div><div class="faq-a">It depends on what you have. Many consumer-grade systems are not compatible with commercial NVR infrastructure. We assess your existing hardware and give you an honest recommendation.</div></div>
+<div class="faq-item reveal"><div class="faq-q">Is this available as a standalone service?</div><div class="faq-a">NVR installation is available as a standalone project. Ongoing monitoring is included with a managed IT plan or available as a separate support agreement.</div></div>
+</div>
+    <div class="cta-band reveal" style="margin-top:64px;">
+      <h2>Ready to Get Started? <span>Let's Talk.</span></h2>
       <div class="cta-actions">
         <a href="../index.html#contact" class="btn btn-primary">Request a Free Assessment</a>
         <a href="tel:+13039709081" class="btn btn-outline">(303) 970-9081</a>
@@ -192,7 +194,6 @@
     </div>
   </div>
 </section>
-
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -201,14 +202,14 @@
         <p class="footer-about">Enterprise-grade managed IT services and cybersecurity for Denver businesses. Proactive support. Predictable pricing. Real accountability.</p>
       </div>
       <div class="footer-col"><h5>Services</h5><ul>
-        <li><a href="managed-it.html">Managed IT Services</a></li>
-        <li><a href="cybersecurity.html">Cybersecurity</a></li>
-        <li><a href="cloud.html">Cloud Solutions</a></li>
-        <li><a href="backup.html">Backup and Recovery</a></li>
-        <li><a href="network.html">Network Solutions</a></li>
-        <li><a href="compliance.html">HIPAA Compliance</a></li>
-        <li><a href="it-consultation.html">IT Consultation</a></li>
-        <li><a href="nvr.html">NVR Solutions</a></li>
+        <li><a href="../services/managed-it.html">Managed IT Services</a></li>
+        <li><a href="../services/cybersecurity.html">Cybersecurity</a></li>
+        <li><a href="../services/cloud.html">Cloud Solutions</a></li>
+        <li><a href="../services/backup.html">Backup and Recovery</a></li>
+        <li><a href="../services/network.html">Network Solutions</a></li>
+        <li><a href="../services/compliance.html">HIPAA Compliance</a></li>
+        <li><a href="../services/it-consultation.html">IT Consultation</a></li>
+        <li><a href="../services/nvr.html">NVR Solutions</a></li>
       </ul></div>
       <div class="footer-col"><h5>Company</h5><ul>
         <li><a href="../about.html">About Us</a></li>
@@ -219,7 +220,7 @@
       </ul></div>
       <div class="footer-col"><h5>Contact</h5><ul>
         <li><a href="tel:+13039709081">(303) 970-9081</a></li>
-        <li><a href="/cdn-cgi/l/email-protection#6a190b060f192a1a0b060c05180d0f031e44090507"><span class="__cf_email__" data-cfemail="6b180a070e182b1b0a070d04190c0e021f45080406">[email&#160;protected]</span></a></li>
+        <li><a href="mailto:sales@palforgeit.com">sales@palforgeit.com</a></li>
         <li><span style="font-size:0.85rem;color:var(--muted);">Denver, Colorado</span></li>
       </ul></div>
     </div>
@@ -229,12 +230,26 @@
         <a href="https://linkedin.com/company/palforgeit" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://facebook.com/palforgeit" target="_blank" rel="noopener">Facebook</a>
         <a href="https://instagram.com/palforgeit" target="_blank" rel="noopener">Instagram</a>
+        <a href="../privacy-policy.html">Privacy Policy</a>
       </div>
     </div>
   </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 30));
-  document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('open'));
+<script>
+  var navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function() { navbar.classList.toggle('scrolled', window.scrollY > 30); });
+  document.getElementById('menuToggle').addEventListener('click', function() { document.getElementById('mobileMenu').classList.toggle('open'); });
   function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  // Reveal animation: show above-fold immediately, animate rest on scroll
+  (function() {
+    var vh = window.innerHeight;
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      if (el.getBoundingClientRect().top < vh - 40) { el.classList.add('in'); }
+    });
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e, i) {
+        if (e.isIntersecting) {
+          setTimeout(function() { e.target.classList.add('in'); }, i * 60);
+</body>
+</html>

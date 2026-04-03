@@ -1,123 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ransomware Is Targeting Denver Small Businesses | Pal Forge IT Solutions</title>
-  <meta name="description" content="Ransomware attacks against SMBs are increasing. Learn how these attacks work, why small businesses are being targeted, and the specific steps to protect your Denver business." />
+  <meta name="description" content="Ransomware attacks against SMBs are increasing. Learn how these attacks work and the specific steps to protect your Denver business." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://palforgeit.com/blog/ransomware-denver-smb" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  
   <style>
+
     :root {
-      --blue: #114EA1; --blue-mid: #3E79B2;
-      --ink: #08090B; --ink2: #0f1117; --ink3: #161b26;
-      --rule: rgba(186,192,198,0.1); --rule2: rgba(186,192,198,0.18);
-      --white: #F4F5F7; --muted: #7A8394; --light: #B0BBC8;
+      --blue: #114EA1; --blue-mid: #3E79B2; --blue-light: #5B9BD5;
+      --ink: #0D1117; --ink2: #131920; --ink3: #1a2332;
+      --rule: rgba(255,255,255,0.06); --rule2: rgba(255,255,255,0.1);
+      --white: #F0F4F8; --offwhite: #C8D4E0; --muted: #6B7E94;
       --font: 'Plus Jakarta Sans', sans-serif;
-      
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { background: var(--ink); color: var(--white); font-family: var(--font); font-size: 16px; line-height: 1.7; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+    body { background: var(--ink); color: var(--white); font-family: var(--font); font-size: 16px; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+    .section { padding: 96px 0; }
     a { color: inherit; text-decoration: none; }
-    .eyebrow { font-family: var(--font); font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue-mid); display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-    .eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--blue-mid); }
-    .btn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 15px 32px; cursor: pointer; border: none; transition: all 0.22s ease; }
-    .btn-primary { background: var(--blue); color: #fff; }
-    .btn-primary:hover { background: var(--blue-mid); transform: translateY(-1px); }
-    .btn-ghost { background: transparent; color: var(--white); border: 1px solid var(--rule2); }
-    .btn-ghost:hover { border-color: var(--blue-mid); color: var(--blue-mid); }
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background 0.35s, border-color 0.35s; border-bottom: 1px solid transparent; }
-    nav.scrolled { background: rgba(8,9,11,0.96); backdrop-filter: blur(20px); border-color: var(--rule); }
-    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 76px; }
-    .nav-logo img { height: 36px; width: auto; display: block; }
-    .nav-links { display: flex; align-items: center; gap: 36px; }
-    .nav-links a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font); font-weight: 600; font-size: 0.875rem; padding: 14px 28px; cursor: pointer; border: none; transition: all 0.2s ease; border-radius: 6px; }
+    .btn-primary { background: var(--blue); color: #fff; box-shadow: 0 4px 20px rgba(17,78,161,0.3); }
+    .btn-primary:hover { background: #1560c0; transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--white); border: 1.5px solid var(--rule2); border-radius: 6px; }
+    .btn-outline:hover { border-color: var(--blue-mid); color: var(--blue-light); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background 0.3s, border-color 0.3s; border-bottom: 1px solid transparent; }
+    nav.scrolled { background: rgba(13,17,23,0.95); backdrop-filter: blur(16px); border-color: var(--rule); }
+    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .nav-logo img { height: 72px; width: 220px; object-fit: contain; object-position: left center; display: block; filter: brightness(100); }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { font-size: 0.82rem; font-weight: 500; color: var(--muted); transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--white); }
-    .nav-cta { padding: 11px 24px; font-size: 0.72rem; margin-left: 8px; }
+    .nav-cta { margin-left: 8px; padding: 10px 22px; font-size: 0.82rem; }
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
-    .nav-toggle span { display: block; width: 22px; height: 1px; background: var(--white); margin: 6px 0; }
-    .mobile-menu { display: none; position: fixed; inset: 0; z-index: 99; background: var(--ink); padding: 96px 40px 40px; flex-direction: column; }
+    .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--white); margin: 5px 0; }
+    .mobile-menu { display: none; position: fixed; inset: 0; z-index: 99; background: var(--ink); padding: 88px 32px 40px; flex-direction: column; gap: 4px; }
     .mobile-menu.open { display: flex; }
-    .mobile-menu a { font-family: var(--font); font-size: 2rem; font-weight: 600; color: var(--white); padding: 18px 0; border-bottom: 1px solid var(--rule); }
-    .mobile-menu a:last-child { color: var(--blue-mid); border-bottom: none; margin-top: 16px; }
-    .article-hero { padding: 160px 0 72px; background: linear-gradient(160deg, #08090B 0%, #0c1220 55%, #08090B 100%); border-bottom: 1px solid var(--rule); position: relative; overflow: hidden; }
-    .article-hero-line { position: absolute; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent, var(--rule2) 25%, var(--rule2) 75%, transparent); }
-    .article-hero-line:nth-child(1) { right: 15%; }
-    .article-hero-line:nth-child(2) { right: 35%; opacity: 0.5; }
+    .mobile-menu a { font-size: 1.4rem; font-weight: 700; color: var(--white); padding: 14px 0; border-bottom: 1px solid var(--rule); }
+    .mobile-menu a:last-child { color: var(--blue-light); border: none; margin-top: 12px; }
+
+    .article-hero { padding: 148px 0 64px; background: linear-gradient(160deg, #0D1117 0%, #0f1825 55%, #0D1117 100%); border-bottom: 1px solid var(--rule); position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: 0; right: 15%; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent, var(--rule2) 25%, var(--rule2) 75%, transparent); }
+    .article-hero::after { content: ''; position: absolute; top: 0; right: 35%; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent, var(--rule) 25%, var(--rule) 75%, transparent); }
     .article-hero-content { position: relative; z-index: 1; max-width: 760px; }
-    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--muted); margin-bottom: 32px; flex-wrap: wrap; }
-    .breadcrumb a:hover { color: var(--blue-mid); }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--muted); margin-bottom: 28px; flex-wrap: wrap; }
+    .breadcrumb a:hover { color: var(--blue-light); }
     .breadcrumb span { color: var(--rule2); }
-    .article-meta { display: flex; align-items: center; gap: 20px; margin-top: 24px; flex-wrap: wrap; }
-    .article-tag { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-mid); border: 1px solid rgba(62,121,178,0.3); padding: 4px 10px; }
-    .article-date { font-size: 0.78rem; color: var(--muted); font-weight: 300; }
-    .article-read-time { font-size: 0.78rem; color: var(--muted); font-weight: 300; }
-    .article-title { font-family: var(--font); font-size: clamp(2rem, 5vw, 3.6rem); font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; margin-top: 24px; }
-    .article-layout { display: grid; grid-template-columns: 1fr 280px; gap: 80px; padding: 80px 0 96px; align-items: start; }
-    .article-body h2 { font-family: var(--font); font-size: 1.8rem; font-weight: 600; margin: 48px 0 16px; line-height: 1.2; }
-    .article-body h3 { font-family: var(--font); font-size: 1.35rem; font-weight: 600; margin: 36px 0 12px; }
-    .article-body p { font-size: 0.95rem; color: var(--offwhite); font-weight: 300; line-height: 1.85; margin-bottom: 20px; }
-    .article-body p:first-child { font-size: 1.05rem; color: var(--white); font-weight: 400; }
-    .article-body ul, .article-body ol { margin: 0 0 20px 0; padding-left: 20px; }
-    .article-body li { font-size: 0.95rem; color: var(--offwhite); font-weight: 300; line-height: 1.75; margin-bottom: 8px; }
-    .article-body strong { color: var(--white); font-weight: 500; }
-    .callout { background: rgba(17,78,161,0.08); border-left: 3px solid var(--blue); padding: 24px 28px; margin: 32px 0; }
-    .callout p { margin-bottom: 0; color: var(--offwhite); }
-    .callout strong { color: var(--blue-mid); }
-    .article-sidebar { position: sticky; top: 100px; }
-    .sidebar-block { background: var(--ink2); border: 1px solid var(--rule); padding: 28px; margin-bottom: 20px; }
-    .sidebar-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
-    .sidebar-cta-title { font-family: var(--font); font-size: 1.1rem; font-weight: 600; margin-bottom: 12px; line-height: 1.3; }
-    .sidebar-cta-body { font-size: 0.83rem; color: var(--offwhite); font-weight: 300; line-height: 1.7; margin-bottom: 20px; }
+    .article-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+    .article-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-light); background: rgba(17,78,161,0.15); border: 1px solid rgba(62,121,178,0.3); padding: 4px 12px; border-radius: 100px; }
+    .article-date, .article-read-time { font-size: 0.78rem; color: var(--muted); }
+    .article-title { font-size: clamp(1.8rem,4vw,3rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
+    .article-layout { display: grid; grid-template-columns: 1fr 300px; gap: 64px; padding: 72px 0 96px; align-items: start; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; margin: 40px 0 14px; }
+    .article-body h3 { font-size: 1.15rem; font-weight: 700; margin: 28px 0 10px; }
+    .article-body p { font-size: 0.97rem; color: var(--offwhite); line-height: 1.85; margin-bottom: 18px; }
+    .article-body p:first-of-type { font-size: 1.05rem; color: var(--white); font-weight: 500; }
+    .article-body ul, .article-body ol { margin: 0 0 20px 20px; }
+    .article-body li { font-size: 0.95rem; color: var(--offwhite); line-height: 1.75; margin-bottom: 8px; }
+    .article-body strong { color: var(--white); font-weight: 600; }
+    .callout { background: rgba(17,78,161,0.08); border-left: 3px solid var(--blue); padding: 24px 28px; margin: 32px 0; border-radius: 0 8px 8px 0; }
+    .callout p { margin-bottom: 0; }
+    .article-sidebar { position: sticky; top: 92px; display: flex; flex-direction: column; gap: 16px; }
+    .sidebar-card { background: var(--ink2); border: 1px solid var(--rule2); border-radius: 12px; padding: 24px; }
+    .sidebar-card-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-light); margin-bottom: 12px; }
+    .sidebar-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; line-height: 1.35; }
+    .sidebar-card p { font-size: 0.83rem; color: var(--muted); line-height: 1.65; margin-bottom: 18px; }
     .sidebar-links { list-style: none; }
     .sidebar-links li { border-bottom: 1px solid var(--rule); }
     .sidebar-links li:last-child { border-bottom: none; }
-    .sidebar-links a { display: block; font-size: 0.83rem; color: var(--offwhite); font-weight: 300; padding: 10px 0; transition: color 0.2s; }
-    .sidebar-links a:hover { color: var(--blue-mid); }
-    .cta-band { background: var(--ink2); border: 1px solid var(--rule); padding: 64px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
-    .cta-band h2 { font-family: var(--font); font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 600; max-width: 540px; }
-    .cta-band h2 em { font-style: italic; color: var(--blue-mid); }
-    .cta-actions { display: flex; gap: 16px; flex-wrap: wrap; flex-shrink: 0; }
-    footer { background: #050608; border-top: 1px solid var(--rule); padding: 64px 0 36px; }
-    .footer-top { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 56px; }
-    .footer-logo img { height: 28px; width: auto; margin-bottom: 16px; }
-    .footer-brand p { font-size: 0.82rem; color: var(--muted); line-height: 1.75; font-weight: 300; max-width: 260px; }
-    .footer-col h5 { font-size: 0.66rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+    .sidebar-links a { display: block; font-size: 0.83rem; color: var(--offwhite); padding: 10px 0; transition: color 0.2s; }
+    .sidebar-links a:hover { color: var(--blue-light); }
+    .cta-band { background: var(--ink2); border: 1px solid var(--rule2); border-radius: 16px; padding: 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+    .cta-band h2 { font-size: clamp(1.4rem,2.5vw,2rem); font-weight: 800; letter-spacing: -0.02em; max-width: 480px; line-height: 1.2; }
+    .cta-band h2 span { color: var(--blue-light); }
+    .cta-actions { display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font); font-weight: 600; font-size: 0.875rem; padding: 14px 28px; cursor: pointer; border: none; transition: all 0.2s ease; border-radius: 6px; }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:hover { background: #1560c0; transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--white); border: 1.5px solid var(--rule2); border-radius: 6px; }
+    .btn-outline:hover { border-color: var(--blue-mid); color: var(--blue-light); }
+    @media (max-width: 960px) { .nav-links { display: none; } .nav-toggle { display: block; } .article-layout { grid-template-columns: 1fr; } .article-sidebar { position: static; } .cta-band { flex-direction: column; padding: 32px; } }
+
+    footer { background: #080c12; border-top: 1px solid var(--rule); padding: 64px 0 32px; }
+    .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-logo img { height: 56px; width: 176px; object-fit: contain; object-position: left center; margin-bottom: 14px; display: block; filter: brightness(100); }
+    .footer-about { font-size: 0.83rem; color: var(--muted); line-height: 1.75; max-width: 260px; }
+    .footer-col h5 { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
     .footer-col ul { list-style: none; }
-    .footer-col li { margin-bottom: 10px; }
-    .footer-col a { font-size: 0.85rem; color: var(--offwhite); font-weight: 300; transition: color 0.2s; }
-    .footer-col a:hover { color: var(--blue-mid); }
-    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 32px; border-top: 1px solid var(--rule); }
-    .footer-bottom p { font-size: 0.78rem; color: var(--muted); font-weight: 300; }
-    .social-row { display: flex; gap: 24px; }
-    .social-row a { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
-    .social-row a:hover { color: var(--blue-mid); }
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
-    .reveal.in { opacity: 1; transform: none; }
-    
-    @media (max-width: 960px) {
-      .nav-links { display: none; } .nav-toggle { display: block; }
-      .article-layout { grid-template-columns: 1fr; gap: 48px; }
-      .article-sidebar { position: static; }
-      .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
-      .cta-band { flex-direction: column; padding: 40px; }
-    }
-    @media (max-width: 600px) {
-      .container { padding: 0 24px; }
-      .footer-top { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-      .nav-inner { padding: 0 24px; }
-    }
-</style>
+    .footer-col li { margin-bottom: 9px; }
+    .footer-col a { font-size: 0.85rem; color: var(--offwhite); transition: color 0.2s; }
+    .footer-col a:hover { color: var(--blue-light); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 28px; border-top: 1px solid var(--rule); }
+    .footer-bottom p { font-size: 0.78rem; color: var(--muted); }
+    .footer-socials { display: flex; gap: 20px; }
+    .footer-socials a { font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; transition: color 0.2s; }
+    .footer-socials a:hover { color: var(--blue-light); }
+    @media (max-width: 960px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+    @media (max-width: 600px) { .container { padding: 0 20px; } .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
+  </style>
 </head>
 <body>
-
 <nav id="navbar">
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo"><img src="../PAL_FORGE-Horizontal-RGB-Color-LG.png" alt="Pal Forge IT Solutions" /></a>
@@ -125,7 +115,7 @@
       <a href="../index.html#services">Services</a>
       <a href="../about.html">About</a>
       <a href="../index.html#pricing">Pricing</a>
-      <a href="index.html" class="active">Blog</a>
+      <a href="../blog/index.html"class="active">Blog</a>
       <a href="../index.html#contact" class="btn btn-primary nav-cta">Free Assessment</a>
     </div>
     <button class="nav-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -135,16 +125,13 @@
   <a href="../index.html#services" onclick="closeMobile()">Services</a>
   <a href="../about.html" onclick="closeMobile()">About</a>
   <a href="../index.html#pricing" onclick="closeMobile()">Pricing</a>
-  <a href="index.html" onclick="closeMobile()">Blog</a>
+  <a href="../blog/index.html" onclick="closeMobile()">Blog</a>
   <a href="../index.html#contact" onclick="closeMobile()">Free Assessment</a>
 </div>
-
 <section class="article-hero">
-  <div class="article-hero-line"></div>
-  <div class="article-hero-line"></div>
   <div class="container">
     <div class="article-hero-content reveal">
-      <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="index.html">Blog</a><span>/</span>Ransomware and Denver SMBs</div>
+      <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="index.html">Blog</a><span>/</span>Ransomware Is Targeting Denver Small Businesses. H</div>
       <div class="article-meta">
         <div class="article-tag">Cybersecurity</div>
         <div class="article-date">March 2025</div>
@@ -154,132 +141,120 @@
     </div>
   </div>
 </section>
-
 <div class="container">
   <div class="article-layout">
-    <div class="article-body reveal">
-      <p>Ransomware is no longer a problem that only large enterprises need to worry about. Over the past two years, criminal groups have shifted a significant portion of their attacks toward small and mid-sized businesses — companies with 10 to 250 employees — because they represent a combination that attackers find attractive: real money to pay a ransom, and security postures that are much easier to penetrate than what a Fortune 500 company maintains.</p>
-
-        <h2>Why Small Businesses Are Being Targeted</h2>
-        <p>The economics of ransomware have changed. Early ransomware campaigns often targeted individuals or large organizations. Individuals rarely paid meaningful ransoms, and large enterprises increasingly hardened their defenses after high-profile incidents. Small businesses, by contrast, often have real revenue, limited IT resources, and security programs that were designed around a threat environment that no longer exists.</p>
-        <p>Attackers know this. They have built automated tools that scan for common vulnerabilities — unpatched systems, exposed remote desktop services, weak credentials on internet-facing applications — and they run those scans continuously. When a business is identified as a potential target, the attacker is often inside the network before any human has reviewed the initial access.</p>
-        <div class="callout"><p><strong>Key statistic:</strong> According to industry research, 68 percent of ransomware attacks in 2024 targeted businesses with fewer than 250 employees. The average total cost of an incident — including downtime, recovery, ransom payment, and remediation — was $1.85 million.</p></div>
-
-        <h2>How a Ransomware Attack Actually Works</h2>
-        <p>Understanding the mechanics of a ransomware attack matters because it clarifies where the effective defenses sit. Most businesses assume ransomware is primarily an email problem — someone clicks a link, malware runs, files get encrypted. That is one entry point, but it is far from the only one, and it is not how the most damaging attacks typically operate.</p>
-        <h3>Initial Access</h3>
-        <p>Attackers get in through a handful of common methods. Phishing emails carrying malicious attachments or links remain prevalent. Exposed Remote Desktop Protocol endpoints are a persistent entry point — if your business has RDP accessible from the internet with weak credentials, it is a matter of when, not if. Unpatched vulnerabilities in VPNs, firewalls, and web applications are exploited by attackers who monitor public vulnerability databases and move quickly when new disclosures are made.</p>
-        <h3>Persistence and Lateral Movement</h3>
-        <p>Here is the part that surprises most business owners: ransomware operators typically spend days or weeks inside a network before they deploy the ransomware payload. During that time, they are escalating privileges, identifying backup systems, mapping the network, and staging data for exfiltration. When the ransomware finally executes, it targets the systems that will cause the most disruption — and the backup infrastructure first, if it is accessible.</p>
-        <p>This is why endpoint protection alone is not sufficient. By the time ransomware is executing, the attacker has already been in your environment. The defense has to happen earlier in the chain.</p>
-        <h3>Encryption and Extortion</h3>
-        <p>Once the attacker is ready, they deploy the ransomware across the network simultaneously. Files are encrypted, systems become unavailable, and a ransom note appears. Increasingly, attackers also exfiltrate data before encrypting it and threaten to publish it publicly if the ransom is not paid — a tactic called double extortion that creates pressure even for businesses that have backups.</p>
-
-        <h2>What an Effective Defense Looks Like</h2>
-        <p>There is no single control that eliminates ransomware risk. Effective defense requires layering multiple controls that catch threats at different points in the attack chain.</p>
-        <h3>Managed Detection and Response</h3>
-        <p>Standard endpoint protection blocks known threats. Managed detection and response — specifically platforms like Huntress — actively hunts for attacker behavior that automated tools miss. This includes persistence mechanisms, credential harvesting tools, and lateral movement indicators that appear in the days or weeks before ransomware executes. MDR is the control that catches attackers during the dwell period, before they reach the point of deployment.</p>
-        <h3>Patching and Vulnerability Management</h3>
-        <p>A significant percentage of ransomware attacks exploit known vulnerabilities for which patches were available. Regular, systematic patching of operating systems and applications — including network devices and VPN endpoints — closes the doors that attackers are actively scanning for.</p>
-        <h3>Multi-Factor Authentication</h3>
-        <p>Credential theft is a primary method for lateral movement and privilege escalation. Enforcing MFA on all remote access, email, and administrative accounts significantly limits what an attacker can do with stolen credentials.</p>
-        <h3>Tested Backups</h3>
-        <p>A backup that has never been tested is not a backup. You need recent, tested, and ideally immutable backups that are stored separately from your primary environment. Attackers specifically target accessible backup systems. If your backups are connected to the same network they can reach, they will be encrypted along with everything else.</p>
-        <h3>Email Security</h3>
-        <p>DMARC, DKIM, and SPF configuration prevents attackers from spoofing your domain and impersonating your organization in phishing attacks. Email filtering that scans attachments and links in real time reduces the likelihood that a phishing email reaches your users in the first place.</p>
-
-        <h2>What to Do If You Have Been Hit</h2>
-        <p>If you suspect an active ransomware attack, the immediate priority is containment — isolating affected systems from the network to limit the spread. Do not shut systems down unless directed to by a security professional, as this can destroy forensic evidence needed for recovery. Contact your IT provider or incident response team immediately. Do not pay the ransom without first exhausting recovery options; payment does not guarantee decryption and funds criminal operations.</p>
-        <p>The practical reality is that recovery from ransomware without a functional backup is extremely difficult and expensive. Prevention and preparation are the only reliable strategies.</p>
-
-        <h2>Taking the Next Step</h2>
-        <p>If you are not confident about your current security posture, the right starting point is an honest assessment of where the gaps are. That means looking at your endpoint protection, your patch levels, your backup integrity, your remote access controls, and your email security configuration — not as a checkbox exercise, but as a genuine evaluation of your risk.</p>
-        <p>Pal Forge IT offers a free IT and security assessment for Denver businesses. We will look at your environment, identify the gaps, and give you a clear picture of your actual exposure — with no obligation attached.</p>
-    </div>
+    <div class="article-body reveal"><p>Ransomware is no longer a problem that only large enterprises need to worry about. Over the past two years, criminal groups have shifted a significant portion of their attacks toward small and mid-sized businesses — companies with 10 to 250 employees — because they represent a combination that attackers find attractive: real money to pay a ransom, and security postures that are much easier to penetrate than what a Fortune 500 company maintains.</p>
+<h2>Why Small Businesses Are Being Targeted</h2>
+<p>The economics of ransomware have changed. Attackers know that small businesses often have real revenue, limited IT resources, and security programs that were designed around a threat environment that no longer exists. They have built automated tools that scan continuously for common vulnerabilities — unpatched systems, exposed remote desktop services, weak credentials on internet-facing applications.</p>
+<div class="callout"><p><strong>Key statistic:</strong> 68 percent of ransomware attacks in 2024 targeted businesses with fewer than 250 employees. The average total cost of an incident — including downtime, recovery, ransom payment, and remediation — was $1.85 million.</p></div>
+<h2>How a Ransomware Attack Actually Works</h2>
+<p>Most businesses assume ransomware is primarily an email problem — someone clicks a link, malware runs, files get encrypted. That is one entry point, but not how the most damaging attacks typically operate.</p>
+<h3>Initial Access</h3>
+<p>Attackers get in through phishing emails, exposed Remote Desktop Protocol endpoints with weak credentials, and unpatched vulnerabilities in VPNs, firewalls, and web applications.</p>
+<h3>Persistence and Lateral Movement</h3>
+<p>Ransomware operators typically spend days or weeks inside a network before deploying the payload. During that time they are escalating privileges, identifying backup systems, and mapping the network. When ransomware finally executes, it targets the systems that will cause the most disruption — and the backup infrastructure first, if accessible.</p>
+<h3>Encryption and Extortion</h3>
+<p>Files are encrypted, systems become unavailable, and a ransom note appears. Increasingly, attackers also exfiltrate data before encrypting it and threaten to publish it publicly — a tactic called double extortion that creates pressure even for businesses that have backups.</p>
+<h2>What an Effective Defense Looks Like</h2>
+<h3>Managed Detection and Response</h3>
+<p>Platforms like Huntress actively hunt for attacker behavior that automated tools miss — persistence mechanisms, credential harvesting tools, and lateral movement indicators that appear days or weeks before ransomware executes.</p>
+<h3>Patching and Vulnerability Management</h3>
+<p>A significant percentage of ransomware attacks exploit known vulnerabilities for which patches were already available. Regular, systematic patching of operating systems and applications closes the doors attackers are actively scanning for.</p>
+<h3>Multi-Factor Authentication</h3>
+<p>Enforcing MFA on all remote access, email, and administrative accounts significantly limits what an attacker can do with stolen credentials.</p>
+<h3>Tested Backups</h3>
+<p>A backup that has never been tested is not a backup. You need recent, tested, and ideally immutable backups stored separately from your primary environment. Attackers specifically target accessible backup systems.</p>
+<h3>Email Security</h3>
+<p>DMARC, DKIM, and SPF configuration prevents attackers from spoofing your domain. Email filtering that scans attachments and links in real time reduces the likelihood a phishing email reaches your users.</p>
+<h2>Taking the Next Step</h2>
+<p>If you are not confident about your current security posture, the right starting point is an honest assessment of where the gaps are. Pal Forge IT offers a free IT and security assessment for Denver businesses — no obligation attached.</p></div>
     <aside class="article-sidebar">
-        <div class="sidebar-block">
-          <div class="sidebar-label">Get a Free Assessment</div>
-          <div class="sidebar-cta-title">Is Your Business Protected Against Ransomware?</div>
-          <div class="sidebar-cta-body">We audit your security posture, identify gaps, and give you a clear picture of your actual risk — at no cost and with no obligation.</div>
-          <a href="../index.html#contact" class="btn btn-primary" style="width:100%;justify-content:center;">Request Assessment</a>
-        </div>
-        <div class="sidebar-block">
-          <div class="sidebar-label">Related Services</div>
-          <ul class="sidebar-links">
-            <li><a href="../services/cybersecurity.html">Cybersecurity</a></li>
-            <li><a href="../services/managed-it.html">Managed IT Services</a></li>
-            <li><a href="../services/backup.html">Backup and Recovery</a></li>
-          </ul>
-        </div>
-        <div class="sidebar-block">
-          <div class="sidebar-label">More Articles</div>
-          <ul class="sidebar-links">
-            <li><a href="hipaa-compliance-2025.html">HIPAA Compliance in 2025</a></li>
-            <li><a href="managed-it-vs-break-fix.html">Managed IT vs. Break-Fix</a></li>
-          </ul>
-        </div>
-      </aside>
-  </div>
-</div>
-
-<div class="container" style="padding-bottom:96px;">
-  <div class="cta-band reveal">
-    <h2>Have a Question? <em>We Will Give You a Straight Answer.</em></h2>
-    <div class="cta-actions">
-      <a href="../index.html#contact" class="btn btn-primary">Request a Free Assessment</a>
-      <a href="tel:+13039709081" class="btn btn-ghost">(303) 970-9081</a>
-    </div>
-  </div>
-</div>
-
-<footer>
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="footer-logo"><img src="../PAL_FORGE-Horizontal-RGB-Color-LG.png" alt="Pal Forge IT Solutions" /></div>
-        <p>Enterprise-grade managed IT services and cybersecurity for Denver businesses. Proactive support. Predictable pricing. Real accountability.</p>
+      <div class="sidebar-card">
+        <div class="sidebar-card-label">Free Assessment</div>
+        <h4>Want to Know Where Your Business Stands?</h4>
+        <p>We audit your IT environment and security posture at no cost, with no obligation.</p>
+        <a href="../index.html#contact" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started</a>
       </div>
-      <div class="footer-col">
-        <h5>Services</h5>
-        <ul>
+      <div class="sidebar-card">
+        <div class="sidebar-card-label">Our Services</div>
+        <ul class="sidebar-links">
           <li><a href="../services/managed-it.html">Managed IT Services</a></li>
           <li><a href="../services/cybersecurity.html">Cybersecurity</a></li>
+          <li><a href="../services/compliance.html">HIPAA Compliance</a></li>
           <li><a href="../services/cloud.html">Cloud Solutions</a></li>
           <li><a href="../services/backup.html">Backup and Recovery</a></li>
-          <li><a href="../services/network.html">Network Solutions</a></li>
-          <li><a href="../services/compliance.html">HIPAA Compliance</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h5>Company</h5>
-        <ul>
-          <li><a href="../about.html">About Us</a></li>
-          <li><a href="../index.html#process">Our Process</a></li>
-          <li><a href="../index.html#pricing">Pricing</a></li>
-          <li><a href="https://helpdesk.palforgeit.com" target="_blank" rel="noopener">Customer Portal</a></li>
-          <li><a href="../index.html#contact">Contact</a></li>
-        </ul>
+      <div class="sidebar-card">
+        <div class="sidebar-card-label">More Articles</div>
+        <ul class="sidebar-links"><li><a href="hipaa-compliance-2025.html">HIPAA Compliance in 2025</a></li><li><a href="managed-it-vs-break-fix.html">Managed IT vs. Break-Fix</a></li></ul>
       </div>
-      <div class="footer-col">
-        <h5>Contact</h5>
-        <ul>
-          <li><a href="tel:+13039709081">(303) 970-9081</a></li>
-          <li><a href="/cdn-cgi/l/email-protection#3142505d54427141505d575e43565458451f525e5c"><span class="__cf_email__" data-cfemail="ff8c9e939a8cbf8f9e9399908d989a968bd19c9092">[email&#160;protected]</span></a></li>
-          <li><span style="color:var(--muted);font-size:0.85rem;font-weight:300;">Denver, Colorado</span></li>
-        </ul>
+    </aside>
+  </div>
+  <div class="cta-band reveal" style="margin-bottom:96px;">
+    <h2>Have a Question? <span>We Give Straight Answers.</span></h2>
+    <div class="cta-actions">
+      <a href="../index.html#contact" class="btn btn-primary">Request a Free Assessment</a>
+      <a href="tel:+13039709081" class="btn btn-outline">(303) 970-9081</a>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><img src="../PAL_FORGE-Horizontal-RGB-Color-LG.png" alt="Pal Forge IT Solutions" /></div>
+        <p class="footer-about">Enterprise-grade managed IT services and cybersecurity for Denver businesses. Proactive support. Predictable pricing. Real accountability.</p>
       </div>
+      <div class="footer-col"><h5>Services</h5><ul>
+        <li><a href="../services/managed-it.html">Managed IT Services</a></li>
+        <li><a href="../services/cybersecurity.html">Cybersecurity</a></li>
+        <li><a href="../services/cloud.html">Cloud Solutions</a></li>
+        <li><a href="../services/backup.html">Backup and Recovery</a></li>
+        <li><a href="../services/network.html">Network Solutions</a></li>
+        <li><a href="../services/compliance.html">HIPAA Compliance</a></li>
+        <li><a href="../services/it-consultation.html">IT Consultation</a></li>
+        <li><a href="../services/nvr.html">NVR Solutions</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Company</h5><ul>
+        <li><a href="../about.html">About Us</a></li>
+        <li><a href="../index.html#pricing">Pricing</a></li>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a href="https://helpdesk.palforgeit.com" target="_blank" rel="noopener">Customer Portal</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul>
+        <li><a href="tel:+13039709081">(303) 970-9081</a></li>
+        <li><a href="mailto:sales@palforgeit.com">sales@palforgeit.com</a></li>
+        <li><span style="font-size:0.85rem;color:var(--muted);">Denver, Colorado</span></li>
+      </ul></div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2025 Pal Forge IT Solutions, LLC. All rights reserved.</p>
-      <div class="social-row">
+      <div class="footer-socials">
         <a href="https://linkedin.com/company/palforgeit" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://facebook.com/palforgeit" target="_blank" rel="noopener">Facebook</a>
         <a href="https://instagram.com/palforgeit" target="_blank" rel="noopener">Instagram</a>
+        <a href="../privacy-policy.html">Privacy Policy</a>
       </div>
     </div>
   </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 30));
-  document.getElementById('menuToggle').addEventListener(
+<script>
+  var navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function() { navbar.classList.toggle('scrolled', window.scrollY > 30); });
+  document.getElementById('menuToggle').addEventListener('click', function() { document.getElementById('mobileMenu').classList.toggle('open'); });
+  function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  // Reveal animation: show above-fold immediately, animate rest on scroll
+  (function() {
+    var vh = window.innerHeight;
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      if (el.getBoundingClientRect().top < vh - 40) { el.classList.add('in'); }
+    });
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e, i) {
+        if (e.isIntersecting) {
+          setTimeout(function() { e.target.classList.add('in'); }, i * 60);
+</body>
+</html>
