@@ -192,7 +192,7 @@
 <div class="include-row reveal"><div class="include-num">03</div><div class="include-content"><h4>Cloud Migration Planning and Execution</h4><p>Structured migration from on-premises or legacy systems with minimal disruption to your operations.</p></div></div>
 <div class="include-row reveal"><div class="include-num">04</div><div class="include-content"><h4>Identity and Access Management</h4><p>User provisioning, multi-factor authentication, conditional access policies, and role-based permissions.</p></div></div>
 <div class="include-row reveal"><div class="include-num">05</div><div class="include-content"><h4>Cloud Security Configuration</h4><p>Hardening your environment against misconfigured sharing settings, overpermissioned accounts, and legacy authentication protocols.</p></div></div>
-<div class="include-row reveal"><div class="include-num">06</div><div class="include-content"><h4>Backup for Cloud Data</h4><p>Cloud-to-cloud backup via Druva to protect Microsoft 365 and Google Workspace data against accidental deletion and ransomware.</p></div></div>
+<div class="include-row reveal"><div class="include-num">06</div><div class="include-content"><h4>Backup for Cloud Data</h4><p>Cloud-to-cloud backup to protect Microsoft 365 and Google Workspace data against accidental deletion and ransomware.</p></div></div>
 </div>
   </div>
 </section>
@@ -243,7 +243,7 @@
       </ul></div>
       <div class="footer-col"><h5>Contact</h5><ul>
         <li><a href="tel:+13039709081">(303) 970-9081</a></li>
-        <li><a href="mailto:sales@palforgeit.com">sales@palforgeit.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#c2b1a3aea7b182b2a3aea4adb0a5a7abb6eca1adaf"><span class="__cf_email__" data-cfemail="2f5c4e434a5c6f5f4e4349405d484a465b014c4042">[email&#160;protected]</span></a></li>
         <li><span style="font-size:.85rem;color:rgba(255,255,255,.35);">Denver, Colorado</span></li>
       </ul></div>
     </div>
@@ -258,7 +258,7 @@
     </div>
   </div>
 </footer>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function(){
   var nav=document.getElementById('nav');
   if(nav) window.addEventListener('scroll',function(){nav.classList.toggle('nav--scrolled',window.scrollY>20);});
@@ -267,16 +267,18 @@
   window.closeMobile=function(){var m=document.getElementById('mobileMenu');if(m)m.classList.remove('open');};
   window.addEventListener('load', function() {
   document.body.classList.add('js-ready');
-    var vh=window.innerHeight;
-    document.querySelectorAll('.reveal').forEach(function(el){
-      if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
-    });
-    var obs=new IntersectionObserver(function(entries){
-      entries.forEach(function(e,i){
-        if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+    window.addEventListener('load', function() {
+  var vh=window.innerHeight;
+      document.querySelectorAll('.reveal').forEach(function(el){
+        if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
       });
-    },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
-    document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(e,i){
+          if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+        });
+      },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
+      document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+  });
   });
   var form=document.getElementById('contactForm');
   if(form){
@@ -285,12 +287,6 @@
       var action=form.getAttribute('action');
       var success=document.getElementById('formSuccess');
       if(action.indexOf('YOUR_FORM_ID')!==-1){success.style.display='block';form.reset();return;}
-      fetch(action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
-        .then(function(r){if(r.ok){success.style.display='block';form.reset();}})
-        .catch(function(err){console.error(err);});
-    });
-  }
-})();
-</script>
+      fetch(action,{method:'
 </body>
 </html>

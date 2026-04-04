@@ -168,7 +168,7 @@
       <div class="overview-left reveal">
         <div class="label">Overview</div>
         <h2>Your Entire IT Environment, Managed and Monitored 24/7.</h2>
-        <p>Most businesses need enterprise-grade monitoring and fast support — not a full-time internal IT team. Our Managed IT Services plan delivers exactly that with a guaranteed 15-minute response time, predictable monthly pricing, and a team that knows your infrastructure inside and out.</p><p>We handle endpoints, servers, user accounts, patch management, software licensing, and ongoing maintenance. You call when you need us. We are already watching when you do not.</p>
+        <p>Most businesses need enterprise-grade monitoring and fast support — not a full-time internal IT team. Our Managed IT Services plan delivers exactly that with a guaranteed 15-minute response time, predictable monthly pricing, and a team that knows your infrastructure inside and out.</p><p>We handle endpoints, servers, user accounts, patch management, software licensing, and ongoing maintenance. One team, one monthly rate, full accountability. You call when you need us. We are already watching when you do not.</p>
       </div>
       <div class="reveal">
         <div class="plan-card">
@@ -189,7 +189,7 @@
     <h2 class="h2 reveal" style="max-width:540px;">Everything Covered Under This Service.</h2>
     <div class="includes-list"><div class="include-row reveal"><div class="include-num">01</div><div class="include-content"><h4>24/7 Remote Monitoring and Management</h4><p>We monitor your endpoints, servers, and network around the clock. Alerts are triaged and addressed in real time, often before you know there is a problem.</p></div></div>
 <div class="include-row reveal"><div class="include-num">02</div><div class="include-content"><h4>Help Desk with 15-Minute Response</h4><p>Every ticket gets a real person within 15 minutes. Remote support resolves the majority of issues without waiting for an on-site visit.</p></div></div>
-<div class="include-row reveal"><div class="include-num">03</div><div class="include-content"><h4>Endpoint Protection via SentinelOne</h4><p>AI-driven endpoint detection and response on every managed device. Threats are identified and contained automatically.</p></div></div>
+<div class="include-row reveal"><div class="include-num">03</div><div class="include-content"><h4>Endpoint Protection via SentinelOne</h4><p>Enterprise-grade endpoint protection on every managed device. Threats are identified and contained automatically before they impact your operations.</p></div></div>
 <div class="include-row reveal"><div class="include-num">04</div><div class="include-content"><h4>Patch Management</h4><p>OS and application patches are tested and deployed on a regular schedule, keeping systems current and reducing vulnerability exposure.</p></div></div>
 <div class="include-row reveal"><div class="include-num">05</div><div class="include-content"><h4>Microsoft 365 and Google Workspace Support</h4><p>User provisioning, licensing, email configuration, and ongoing support for your productivity suite.</p></div></div>
 <div class="include-row reveal"><div class="include-num">06</div><div class="include-content"><h4>Monthly Reporting</h4><p>A clear monthly summary of environment health, ticket activity, and any recommendations for your review.</p></div></div>
@@ -243,7 +243,7 @@
       </ul></div>
       <div class="footer-col"><h5>Contact</h5><ul>
         <li><a href="tel:+13039709081">(303) 970-9081</a></li>
-        <li><a href="mailto:sales@palforgeit.com">sales@palforgeit.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#6310020f06102313020f050c1104060a174d000c0e"><span class="__cf_email__" data-cfemail="7300121f16003303121f151c0114161a075d101c1e">[email&#160;protected]</span></a></li>
         <li><span style="font-size:.85rem;color:rgba(255,255,255,.35);">Denver, Colorado</span></li>
       </ul></div>
     </div>
@@ -258,7 +258,7 @@
     </div>
   </div>
 </footer>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function(){
   var nav=document.getElementById('nav');
   if(nav) window.addEventListener('scroll',function(){nav.classList.toggle('nav--scrolled',window.scrollY>20);});
@@ -267,16 +267,18 @@
   window.closeMobile=function(){var m=document.getElementById('mobileMenu');if(m)m.classList.remove('open');};
   window.addEventListener('load', function() {
   document.body.classList.add('js-ready');
-    var vh=window.innerHeight;
-    document.querySelectorAll('.reveal').forEach(function(el){
-      if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
-    });
-    var obs=new IntersectionObserver(function(entries){
-      entries.forEach(function(e,i){
-        if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+    window.addEventListener('load', function() {
+  var vh=window.innerHeight;
+      document.querySelectorAll('.reveal').forEach(function(el){
+        if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
       });
-    },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
-    document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(e,i){
+          if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+        });
+      },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
+      document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+  });
   });
   var form=document.getElementById('contactForm');
   if(form){
@@ -285,12 +287,6 @@
       var action=form.getAttribute('action');
       var success=document.getElementById('formSuccess');
       if(action.indexOf('YOUR_FORM_ID')!==-1){success.style.display='block';form.reset();return;}
-      fetch(action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
-        .then(function(r){if(r.ok){success.style.display='block';form.reset();}})
-        .catch(function(err){console.error(err);});
-    });
-  }
-})();
-</script>
+      fetch(action,{method:'
 </body>
 </html>

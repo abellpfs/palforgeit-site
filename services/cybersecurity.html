@@ -187,10 +187,10 @@
   <div class="container">
     <div class="label reveal">What Is Included</div>
     <h2 class="h2 reveal" style="max-width:540px;">Everything Covered Under This Service.</h2>
-    <div class="includes-list"><div class="include-row reveal"><div class="include-num">01</div><div class="include-content"><h4>Huntress Managed Detection and Response</h4><p>Huntress monitors your endpoints and Microsoft 365 for persistent footholds, lateral movement, and attacker behavior that standard tools miss.</p></div></div>
-<div class="include-row reveal"><div class="include-num">02</div><div class="include-content"><h4>SentinelOne Endpoint Protection</h4><p>AI-driven protection that identifies and contains threats in real time including ransomware, fileless attacks, and zero-day exploits.</p></div></div>
-<div class="include-row reveal"><div class="include-num">03</div><div class="include-content"><h4>Sophos Firewall and Network Security</h4><p>Next-generation firewall with deep packet inspection, intrusion prevention, and web filtering to stop threats at the network perimeter.</p></div></div>
-<div class="include-row reveal"><div class="include-num">04</div><div class="include-content"><h4>EasyDMARC Email Security</h4><p>DMARC, DKIM, and SPF configuration and monitoring to prevent email spoofing and phishing attacks.</p></div></div>
+    <div class="includes-list"><div class="include-row reveal"><div class="include-num">01</div><div class="include-content"><h4>Managed Detection and Response</h4><p>Active threat hunting across your endpoints and cloud accounts — identifying attacker behavior that automated tools miss, including persistent access, lateral movement, and credential abuse.</p></div></div>
+<div class="include-row reveal"><div class="include-num">02</div><div class="include-content"><h4>AI-Driven Endpoint Protection</h4><p>AI-driven protection that identifies and contains threats in real time — including ransomware, fileless attacks, and zero-day exploits — with automatic response that does not wait for a human to act.</p></div></div>
+<div class="include-row reveal"><div class="include-num">03</div><div class="include-content"><h4>Next-Generation Firewall and Network Security</h4><p>Next-generation firewall with deep packet inspection, intrusion prevention, and web filtering to stop threats at the network perimeter.</p></div></div>
+<div class="include-row reveal"><div class="include-num">04</div><div class="include-content"><h4>Email Security and Domain Authentication</h4><p>Your email domain locked down so nobody can send fraudulent messages impersonating your business. Spoofing and phishing attacks stopped at the source.</p></div></div>
 <div class="include-row reveal"><div class="include-num">05</div><div class="include-content"><h4>Vulnerability Scanning</h4><p>Regular scans to identify misconfigurations, unpatched systems, and exposure before attackers find them.</p></div></div>
 <div class="include-row reveal"><div class="include-num">06</div><div class="include-content"><h4>Quarterly Security Reviews</h4><p>A structured review of your security posture every quarter with threat intelligence relevant to your industry.</p></div></div>
 </div>
@@ -204,7 +204,7 @@
     <div class="faq-list"><div class="faq-item reveal"><div class="faq-q">Do small businesses really need this level of security?</div><div class="faq-a">Yes. Attackers do not discriminate by company size. Small businesses are frequently targeted because they are assumed to have weaker defenses. The cost of a breach far exceeds the cost of prevention.</div></div>
 <div class="faq-item reveal"><div class="faq-q">What is the difference between Huntress and SentinelOne?</div><div class="faq-a">SentinelOne blocks known and unknown threats in real time. Huntress adds a managed detection layer on top — analysts actively hunting for threats automated tools may miss. They work together.</div></div>
 <div class="faq-item reveal"><div class="faq-q">What happens when a threat is detected?</div><div class="faq-a">Our team is immediately notified. We isolate the affected system if necessary, investigate, remediate, and provide you with a full incident report.</div></div>
-<div class="faq-item reveal"><div class="faq-q">Do you cover Microsoft 365 environments?</div><div class="faq-a">Yes. Huntress includes coverage for Microsoft 365, monitoring for compromised accounts, suspicious sign-ins, and mailbox forwarding rules.</div></div>
+<div class="faq-item reveal"><div class="faq-q">Do you cover cloud environments like Microsoft 365?</div><div class="faq-a">Yes. Our threat detection covers Microsoft 365, monitoring for compromised accounts, suspicious sign-ins, unexpected inbox rules, and other common cloud attack vectors.</div></div>
 </div>
     <div class="cta-band reveal">
       <h2>Ready to Get Started? <em>Let's Talk.</em></h2>
@@ -243,7 +243,7 @@
       </ul></div>
       <div class="footer-col"><h5>Contact</h5><ul>
         <li><a href="tel:+13039709081">(303) 970-9081</a></li>
-        <li><a href="mailto:sales@palforgeit.com">sales@palforgeit.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#1665777a73655666777a70796471737f623875797b"><span class="__cf_email__" data-cfemail="6112000d04122111000d070e13060408154f020e0c">[email&#160;protected]</span></a></li>
         <li><span style="font-size:.85rem;color:rgba(255,255,255,.35);">Denver, Colorado</span></li>
       </ul></div>
     </div>
@@ -258,7 +258,7 @@
     </div>
   </div>
 </footer>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function(){
   var nav=document.getElementById('nav');
   if(nav) window.addEventListener('scroll',function(){nav.classList.toggle('nav--scrolled',window.scrollY>20);});
@@ -267,16 +267,18 @@
   window.closeMobile=function(){var m=document.getElementById('mobileMenu');if(m)m.classList.remove('open');};
   window.addEventListener('load', function() {
   document.body.classList.add('js-ready');
-    var vh=window.innerHeight;
-    document.querySelectorAll('.reveal').forEach(function(el){
-      if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
-    });
-    var obs=new IntersectionObserver(function(entries){
-      entries.forEach(function(e,i){
-        if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+    window.addEventListener('load', function() {
+  var vh=window.innerHeight;
+      document.querySelectorAll('.reveal').forEach(function(el){
+        if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
       });
-    },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
-    document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(e,i){
+          if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+        });
+      },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
+      document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+  });
   });
   var form=document.getElementById('contactForm');
   if(form){
@@ -285,12 +287,6 @@
       var action=form.getAttribute('action');
       var success=document.getElementById('formSuccess');
       if(action.indexOf('YOUR_FORM_ID')!==-1){success.style.display='block';form.reset();return;}
-      fetch(action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
-        .then(function(r){if(r.ok){success.style.display='block';form.reset();}})
-        .catch(function(err){console.error(err);});
-    });
-  }
-})();
-</script>
+      fetch(action,{method:'
 </body>
 </html>

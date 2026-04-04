@@ -296,6 +296,12 @@
           <div class="proof-item"><span class="proof-check">✓</span> HIPAA compliance ready</div>
           <div class="proof-item"><span class="proof-check">✓</span> Flat-rate pricing</div>
         </div>
+        <div style="margin-top:16px;">
+          <a href="https://calendly.com/palforgeit" target="_blank" rel="noopener" style="font-size:.82rem;font-weight:600;color:var(--blue);display:inline-flex;align-items:center;gap:6px;">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Or book directly on Calendly
+          </a>
+        </div>
       </div>
       <div class="reveal">
         <div class="hero-card">
@@ -312,7 +318,7 @@
             </div>
             <hr class="hc-divider" />
             <div class="hc-feature"><div class="hc-check">✓</div><p>Proactive monitoring catches problems before they reach you</p></div>
-            <div class="hc-feature"><div class="hc-check">✓</div><p>Layered security via Huntress, SentinelOne, and EasyDMARC</p></div>
+            <div class="hc-feature"><div class="hc-check">✓</div><p>Enterprise-grade threat detection on every device and account</p></div>
             <div class="hc-feature"><div class="hc-check">✓</div><p>HIPAA compliance support for regulated industries</p></div>
             <div class="hc-feature"><div class="hc-check">✓</div><p>One flat monthly rate — no surprise invoices, ever</p></div>
           </div>
@@ -400,7 +406,7 @@
       <div class="service-row reveal">
         <div class="service-num">04</div>
         <div class="service-name">Backup and Disaster Recovery</div>
-        <div class="service-desc">Automated backups and tested recovery plans via Druva. Your recovery time is defined before you need it.</div>
+        <div class="service-desc">Automated backups with tested recovery plans. Your recovery time is defined in writing before you ever need it.</div>
         <a href="services/backup.html" class="service-badge">Learn More</a>
       </div>
       <div class="service-row reveal">
@@ -412,7 +418,7 @@
       <div class="service-row reveal">
         <div class="service-num">06</div>
         <div class="service-name">HIPAA and Compliance</div>
-        <div class="service-desc">Continuous compliance monitoring via Vanta for healthcare and regulated businesses.</div>
+        <div class="service-desc">Continuous compliance monitoring for healthcare practices and regulated businesses. Audit-ready at all times.</div>
         <a href="services/compliance.html" class="service-badge">Learn More</a>
       </div>
     </div>
@@ -580,7 +586,7 @@
           <div class="contact-icon">
             <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
-          <a href="mailto:sales@palforgeit.com">sales@palforgeit.com</a>
+          <a href="/cdn-cgi/l/email-protection#d5a6b4b9b0a695a5b4b9b3baa7b2b0bca1fbb6bab8"><span class="__cf_email__" data-cfemail="5b283a373e281b2b3a373d34293c3e322f75383436">[email&#160;protected]</span></a>
         </div>
         <div class="contact-detail">
           <div class="contact-icon">
@@ -599,7 +605,7 @@
       </div>
       <div class="reveal">
         <div class="contact-form-card">
-          <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <form id="contactForm" action="https://auto.palforge.it/webhook/website-lead" method="POST">
             <div class="form-row">
               <div class="field"><label>First Name</label><input type="text" name="firstName" placeholder="John" required /></div>
               <div class="field"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith" required /></div>
@@ -667,7 +673,7 @@
         <h5>Contact</h5>
         <ul>
           <li><a href="tel:+13039709081">(303) 970-9081</a></li>
-          <li><a href="mailto:sales@palforgeit.com">sales@palforgeit.com</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#ff8c9e939a8cbf8f9e9399908d989a968bd19c9092"><span class="__cf_email__" data-cfemail="d5a6b4b9b0a695a5b4b9b3baa7b2b0bca1fbb6bab8">[email&#160;protected]</span></a></li>
           <li><span style="font-size:0.85rem;color:rgba(255,255,255,0.35);">Denver, Colorado</span></li>
         </ul>
       </div>
@@ -684,7 +690,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   (function() {
     var nav = document.getElementById('nav');
     window.addEventListener('scroll', function() {
@@ -701,16 +707,18 @@
           // Reveal: add js-ready so CSS hides elements, then immediately show above-fold
     document.body.classList.add('js-ready');
     window.addEventListener('load', function() {
+  window.addEventListener('load', function() {
   var vh=window.innerHeight;
-      document.querySelectorAll('.reveal').forEach(function(el){
-        if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
-      });
-      var obs=new IntersectionObserver(function(entries){
-        entries.forEach(function(e,i){
-          if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+        document.querySelectorAll('.reveal').forEach(function(el){
+          if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
         });
-      },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
-      document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+        var obs=new IntersectionObserver(function(entries){
+          entries.forEach(function(e,i){
+            if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+          });
+        },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
+        document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+  });
   });
     });
   });
@@ -718,15 +726,20 @@
     if (form) {
       form.addEventListener('submit', function(e) {
         e.preventDefault();
+        var btn = form.querySelector('button[type="submit"]');
+        if (btn) { btn.textContent = 'Sending...'; btn.disabled = true; }
+        var data = {};
+        new FormData(form).forEach(function(v, k) { data[k] = v; });
+        fetch(form.getAttribute('action'), {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+        })
+        .then(function() { window.location.href = 'thank-you.html'; })
+        .catch(function() { window.location.href = 'thank-you.html'; });
+        return;
         var action = form.getAttribute('action');
         var success = document.getElementById('formSuccess');
-        if (action.indexOf('YOUR_FORM_ID') !== -1) { success.style.display = 'block'; form.reset(); return; }
-        fetch(action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
-          .then(function(r) { if (r.ok) { success.style.display = 'block'; form.reset(); } })
-          .catch(function(err) { console.error(err); });
-      });
-    }
-  })();
-</script>
+        if (action.indexOf('YOUR_FORM
 </body>
 </html>

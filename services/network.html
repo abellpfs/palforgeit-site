@@ -168,7 +168,7 @@
       <div class="overview-left reveal">
         <div class="label">Overview</div>
         <h2>Your Network Is the Foundation Everything Else Runs On.</h2>
-        <p>A poorly designed network causes problems that are hard to diagnose and expensive to fix — slow performance, dropped connections, security gaps, and configurations that do not scale.</p><p>We design and deploy network infrastructure on Ubiquiti enterprise hardware — access points, switches, firewalls, and routers — configured for your current workload and built to grow with you.</p><p>Every network we build is documented, monitored, and maintained as part of your managed IT plan.</p>
+        <p>A poorly designed network causes problems that are hard to diagnose and expensive to fix — slow performance, dropped connections, security gaps, and configurations that do not scale.</p><p>We design and deploy enterprise-grade network infrastructure — access points, switches, security gateways, and routers — configured for your current workload and built to grow with you.</p><p>Every network we build is documented, monitored, and maintained as part of your managed IT plan.</p>
       </div>
       <div class="reveal">
         <div class="plan-card">
@@ -188,7 +188,7 @@
     <div class="label reveal">What Is Included</div>
     <h2 class="h2 reveal" style="max-width:540px;">Everything Covered Under This Service.</h2>
     <div class="includes-list"><div class="include-row reveal"><div class="include-num">01</div><div class="include-content"><h4>Network Design and Architecture</h4><p>We assess your environment and design a network that meets your performance, security, and scalability requirements before any equipment is purchased.</p></div></div>
-<div class="include-row reveal"><div class="include-num">02</div><div class="include-content"><h4>Ubiquiti Hardware Deployment</h4><p>Access points, switches, security gateways, and routers from Ubiquiti enterprise line — properly configured, not just plugged in.</p></div></div>
+<div class="include-row reveal"><div class="include-num">02</div><div class="include-content"><h4>Enterprise Network Hardware Deployment</h4><p>Business-grade access points, switches, security gateways, and routers — properly configured for your environment, not just plugged in and left to default settings.</p></div></div>
 <div class="include-row reveal"><div class="include-num">03</div><div class="include-content"><h4>Firewall Configuration and Management</h4><p>Next-generation firewall with stateful packet inspection, intrusion prevention, content filtering, and ongoing rule management.</p></div></div>
 <div class="include-row reveal"><div class="include-num">04</div><div class="include-content"><h4>Network Segmentation</h4><p>VLAN design to isolate sensitive systems, guest networks, and IoT devices from your primary business network.</p></div></div>
 <div class="include-row reveal"><div class="include-num">05</div><div class="include-content"><h4>Wireless Network Deployment</h4><p>High-density wireless deployments with proper channel planning, coverage mapping, and roaming configuration.</p></div></div>
@@ -203,7 +203,7 @@
     <h2 class="h2 reveal" style="max-width:480px;">Frequently Asked Questions.</h2>
     <div class="faq-list"><div class="faq-item reveal"><div class="faq-q">Do you work with existing network hardware?</div><div class="faq-a">We can work with existing hardware if suitable. In many cases aging consumer-grade equipment is the root cause of problems. We give you an honest assessment before recommending replacements.</div></div>
 <div class="faq-item reveal"><div class="faq-q">How disruptive is a network upgrade?</div><div class="faq-a">We plan installations to minimize disruption. Most upgrades can be completed during off-hours or in phases that keep critical systems online.</div></div>
-<div class="faq-item reveal"><div class="faq-q">Can you support multiple office locations?</div><div class="faq-a">Yes. We can design and manage networks across multiple locations including site-to-site VPN and centralized management.</div></div>
+<div class="faq-item reveal"><div class="faq-q">Can you support multiple locations?</div><div class="faq-a">Yes. We can design and manage networks across multiple locations including site-to-site VPN and centralized management.</div></div>
 <div class="faq-item reveal"><div class="faq-q">What is network segmentation and why does it matter?</div><div class="faq-a">Segmentation divides your network into separate zones. If one zone is compromised, segmentation limits how far an attacker can move.</div></div>
 </div>
     <div class="cta-band reveal">
@@ -243,7 +243,7 @@
       </ul></div>
       <div class="footer-col"><h5>Contact</h5><ul>
         <li><a href="tel:+13039709081">(303) 970-9081</a></li>
-        <li><a href="mailto:sales@palforgeit.com">sales@palforgeit.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#8dfeece1e8fecdfdece1ebe2ffeae8e4f9a3eee2e0"><span class="__cf_email__" data-cfemail="24574548415764544548424b5643414d500a474b49">[email&#160;protected]</span></a></li>
         <li><span style="font-size:.85rem;color:rgba(255,255,255,.35);">Denver, Colorado</span></li>
       </ul></div>
     </div>
@@ -258,7 +258,7 @@
     </div>
   </div>
 </footer>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function(){
   var nav=document.getElementById('nav');
   if(nav) window.addEventListener('scroll',function(){nav.classList.toggle('nav--scrolled',window.scrollY>20);});
@@ -267,16 +267,18 @@
   window.closeMobile=function(){var m=document.getElementById('mobileMenu');if(m)m.classList.remove('open');};
   window.addEventListener('load', function() {
   document.body.classList.add('js-ready');
-    var vh=window.innerHeight;
-    document.querySelectorAll('.reveal').forEach(function(el){
-      if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
-    });
-    var obs=new IntersectionObserver(function(entries){
-      entries.forEach(function(e,i){
-        if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+    window.addEventListener('load', function() {
+  var vh=window.innerHeight;
+      document.querySelectorAll('.reveal').forEach(function(el){
+        if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
       });
-    },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
-    document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(e,i){
+          if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+        });
+      },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
+      document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+  });
   });
   var form=document.getElementById('contactForm');
   if(form){
@@ -285,12 +287,6 @@
       var action=form.getAttribute('action');
       var success=document.getElementById('formSuccess');
       if(action.indexOf('YOUR_FORM_ID')!==-1){success.style.display='block';form.reset();return;}
-      fetch(action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
-        .then(function(r){if(r.ok){success.style.display='block';form.reset();}})
-        .catch(function(err){console.error(err);});
-    });
-  }
-})();
-</script>
+      fetch(action,{method:'
 </body>
 </html>

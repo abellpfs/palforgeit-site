@@ -168,7 +168,7 @@
       <div class="overview-left reveal">
         <div class="label">Overview</div>
         <h2>A Backup You've Never Tested Is Not a Backup.</h2>
-        <p>Most businesses have some form of backup in place. Very few have actually tested whether it works. A ransomware attack or hardware failure is not the time to find out your backup has been failing silently for six months.</p><p>We design and manage backup and disaster recovery solutions powered by Druva — built for reliable, automated, and verifiable data protection across endpoints, servers, and cloud environments.</p><p>We back up your data, verify backups are running, test the restore process, and document a recovery plan so nothing is figured out from scratch under pressure.</p>
+        <p>Most businesses have some form of backup in place. Very few have actually tested whether it works. A ransomware attack or hardware failure is not the time to find out your backup has been failing silently for six months.</p><p>We design and manage backup and disaster recovery solutions — built for reliable, automated, and verifiable data protection across endpoints, servers, and cloud environments.</p><p>We back up your data, verify backups are running, test the restore process, and document a recovery plan so nothing is figured out from scratch under pressure.</p>
       </div>
       <div class="reveal">
         <div class="plan-card">
@@ -187,8 +187,8 @@
   <div class="container">
     <div class="label reveal">What Is Included</div>
     <h2 class="h2 reveal" style="max-width:540px;">Everything Covered Under This Service.</h2>
-    <div class="includes-list"><div class="include-row reveal"><div class="include-num">01</div><div class="include-content"><h4>Automated Endpoint and Server Backup</h4><p>Continuous or scheduled backup of workstations, laptops, and servers to secure cloud storage with configurable retention policies.</p></div></div>
-<div class="include-row reveal"><div class="include-num">02</div><div class="include-content"><h4>Microsoft 365 and Google Workspace Backup</h4><p>Cloud-to-cloud backup of email, files, calendars, and collaboration data. Protection against accidental deletion and ransomware.</p></div></div>
+    <div class="includes-list"><div class="include-row reveal"><div class="include-num">01</div><div class="include-content"><h4>Automated Endpoint and Server Backup</h4><p>Continuous or scheduled backup of workstations, laptops, and servers to encrypted cloud storage with configurable retention periods and versioning.</p></div></div>
+<div class="include-row reveal"><div class="include-num">02</div><div class="include-content"><h4>Cloud Data Backup</h4><p>Cloud-to-cloud backup of your email, files, calendars, and collaboration tools. Protection against accidental deletion, ransomware encryption, and account compromise.</p></div></div>
 <div class="include-row reveal"><div class="include-num">03</div><div class="include-content"><h4>Backup Monitoring and Alerting</h4><p>We monitor every backup job. Failed or missed backups trigger immediate alerts and remediation.</p></div></div>
 <div class="include-row reveal"><div class="include-num">04</div><div class="include-content"><h4>Tested Recovery Procedures</h4><p>We document and periodically test your recovery process so we know it works before we need it.</p></div></div>
 <div class="include-row reveal"><div class="include-num">05</div><div class="include-content"><h4>Ransomware Recovery</h4><p>Immutable backups that cannot be encrypted or deleted by ransomware, with rapid restore capabilities to minimize downtime.</p></div></div>
@@ -204,7 +204,7 @@
     <div class="faq-list"><div class="faq-item reveal"><div class="faq-q">How often is our data backed up?</div><div class="faq-a">Endpoints typically back up continuously or daily. Servers can be backed up as frequently as every 15 minutes for critical workloads. We set frequency based on your business requirements.</div></div>
 <div class="faq-item reveal"><div class="faq-q">Where is backup data stored?</div><div class="faq-a">In secure, encrypted cloud storage through Druva. We can also configure local backup targets for faster on-site recovery.</div></div>
 <div class="faq-item reveal"><div class="faq-q">How long does it take to restore from a backup?</div><div class="faq-a">Individual file restores can happen in minutes. Full system restores take longer but are executed against a documented plan to make the process as fast as possible.</div></div>
-<div class="faq-item reveal"><div class="faq-q">Does Microsoft 365 back up our data automatically?</div><div class="faq-a">No. Microsoft maintains platform uptime but does not protect against accidental deletion or ransomware. You need a separate backup solution.</div></div>
+<div class="faq-item reveal"><div class="faq-q">Does Microsoft 365 or Google automatically back up our data?</div><div class="faq-a">No. Microsoft and Google maintain platform availability but are not responsible for recovering data you delete or that gets encrypted by ransomware. You need a separate backup solution for that.</div></div>
 </div>
     <div class="cta-band reveal">
       <h2>Ready to Get Started? <em>Let's Talk.</em></h2>
@@ -243,7 +243,7 @@
       </ul></div>
       <div class="footer-col"><h5>Contact</h5><ul>
         <li><a href="tel:+13039709081">(303) 970-9081</a></li>
-        <li><a href="mailto:sales@palforgeit.com">sales@palforgeit.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#7c0f1d10190f3c0c1d101a130e1b191508521f1311"><span class="__cf_email__" data-cfemail="97e4f6fbf2e4d7e7f6fbf1f8e5f0f2fee3b9f4f8fa">[email&#160;protected]</span></a></li>
         <li><span style="font-size:.85rem;color:rgba(255,255,255,.35);">Denver, Colorado</span></li>
       </ul></div>
     </div>
@@ -258,7 +258,7 @@
     </div>
   </div>
 </footer>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function(){
   var nav=document.getElementById('nav');
   if(nav) window.addEventListener('scroll',function(){nav.classList.toggle('nav--scrolled',window.scrollY>20);});
@@ -267,16 +267,18 @@
   window.closeMobile=function(){var m=document.getElementById('mobileMenu');if(m)m.classList.remove('open');};
   window.addEventListener('load', function() {
   document.body.classList.add('js-ready');
-    var vh=window.innerHeight;
-    document.querySelectorAll('.reveal').forEach(function(el){
-      if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
-    });
-    var obs=new IntersectionObserver(function(entries){
-      entries.forEach(function(e,i){
-        if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+    window.addEventListener('load', function() {
+  var vh=window.innerHeight;
+      document.querySelectorAll('.reveal').forEach(function(el){
+        if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
       });
-    },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
-    document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(e,i){
+          if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+        });
+      },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
+      document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+  });
   });
   var form=document.getElementById('contactForm');
   if(form){
@@ -285,12 +287,6 @@
       var action=form.getAttribute('action');
       var success=document.getElementById('formSuccess');
       if(action.indexOf('YOUR_FORM_ID')!==-1){success.style.display='block';form.reset();return;}
-      fetch(action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
-        .then(function(r){if(r.ok){success.style.display='block';form.reset();}})
-        .catch(function(err){console.error(err);});
-    });
-  }
-})();
-</script>
+      fetch(action,{method:'
 </body>
 </html>

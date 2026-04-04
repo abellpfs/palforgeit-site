@@ -168,7 +168,7 @@
       <div class="overview-left reveal">
         <div class="label">Overview</div>
         <h2>Compliance Is an Ongoing Responsibility, Not a One-Time Audit.</h2>
-        <p>HIPAA compliance requires documented policies, ongoing risk assessments, vendor management, and evidence collection — and it has to hold up when regulators come knocking.</p><p>We use Vanta to automate continuous monitoring and evidence collection, reducing the manual burden and giving you a real-time view of your compliance posture.</p><p>Whether you are preparing for your first HIPAA risk assessment or trying to stay current with your obligations, we build a structured program around your environment.</p>
+        <p>HIPAA compliance requires documented policies, ongoing risk assessments, vendor management, and evidence collection — and it has to hold up when regulators come knocking.</p><p>We use compliance automation to continuously monitor and collect evidence, reducing the manual burden and giving you a real-time view of your compliance posture.</p><p>Whether you are preparing for your first HIPAA risk assessment or trying to stay current with your obligations, we build a structured program around your environment.</p>
       </div>
       <div class="reveal">
         <div class="plan-card">
@@ -187,7 +187,7 @@
   <div class="container">
     <div class="label reveal">What Is Included</div>
     <h2 class="h2 reveal" style="max-width:540px;">Everything Covered Under This Service.</h2>
-    <div class="includes-list"><div class="include-row reveal"><div class="include-num">01</div><div class="include-content"><h4>Vanta Compliance Automation</h4><p>Continuous monitoring of your technical controls against HIPAA requirements. Vanta collects evidence automatically and maintains an audit-ready compliance record.</p></div></div>
+    <div class="includes-list"><div class="include-row reveal"><div class="include-num">01</div><div class="include-content"><h4>Continuous Compliance Monitoring</h4><p>Continuous automated monitoring of your technical controls against HIPAA requirements. Evidence is collected automatically and your compliance record stays audit-ready at all times.</p></div></div>
 <div class="include-row reveal"><div class="include-num">02</div><div class="include-content"><h4>HIPAA Risk Assessment</h4><p>A comprehensive assessment of administrative, physical, and technical safeguards documented in the format required by HIPAA regulations.</p></div></div>
 <div class="include-row reveal"><div class="include-num">03</div><div class="include-content"><h4>Policy Documentation</h4><p>Development and maintenance of required HIPAA policies including access control, incident response, media disposal, and workforce training documentation.</p></div></div>
 <div class="include-row reveal"><div class="include-num">04</div><div class="include-content"><h4>Business Associate Agreement Management</h4><p>Identification of vendors handling PHI with BAA tracking to ensure third-party relationships are properly documented.</p></div></div>
@@ -203,7 +203,7 @@
     <h2 class="h2 reveal" style="max-width:480px;">Frequently Asked Questions.</h2>
     <div class="faq-list"><div class="faq-item reveal"><div class="faq-q">Who needs to be HIPAA compliant?</div><div class="faq-a">Any organization that creates, receives, maintains, or transmits protected health information must comply with HIPAA. We can help determine your specific obligations.</div></div>
 <div class="faq-item reveal"><div class="faq-q">What is a HIPAA risk assessment?</div><div class="faq-a">A required analysis of potential risks and vulnerabilities to the confidentiality, integrity, and availability of the protected health information your organization handles.</div></div>
-<div class="faq-item reveal"><div class="faq-q">How does Vanta help with compliance?</div><div class="faq-a">Vanta connects to your cloud services and infrastructure to automatically collect evidence of your technical controls, maps that evidence against HIPAA requirements, and identifies gaps.</div></div>
+<div class="faq-item reveal"><div class="faq-q">How does automated compliance monitoring work?</div><div class="faq-a">Our compliance platform connects to your cloud services and infrastructure, automatically collects evidence of your technical controls, maps it against HIPAA requirements, and surfaces gaps that need remediation.</div></div>
 <div class="faq-item reveal"><div class="faq-q">We already had a HIPAA risk assessment done. Do we still need ongoing monitoring?</div><div class="faq-a">Yes. A risk assessment is a point-in-time document. HIPAA requires that you maintain and update your compliance program as your environment changes.</div></div>
 </div>
     <div class="cta-band reveal">
@@ -243,7 +243,7 @@
       </ul></div>
       <div class="footer-col"><h5>Contact</h5><ul>
         <li><a href="tel:+13039709081">(303) 970-9081</a></li>
-        <li><a href="mailto:sales@palforgeit.com">sales@palforgeit.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#1c6f7d70796f5c6c7d707a736e7b797568327f7371"><span class="__cf_email__" data-cfemail="0172606d64724171606d676e73666468752f626e6c">[email&#160;protected]</span></a></li>
         <li><span style="font-size:.85rem;color:rgba(255,255,255,.35);">Denver, Colorado</span></li>
       </ul></div>
     </div>
@@ -258,7 +258,7 @@
     </div>
   </div>
 </footer>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function(){
   var nav=document.getElementById('nav');
   if(nav) window.addEventListener('scroll',function(){nav.classList.toggle('nav--scrolled',window.scrollY>20);});
@@ -267,16 +267,18 @@
   window.closeMobile=function(){var m=document.getElementById('mobileMenu');if(m)m.classList.remove('open');};
   window.addEventListener('load', function() {
   document.body.classList.add('js-ready');
-    var vh=window.innerHeight;
-    document.querySelectorAll('.reveal').forEach(function(el){
-      if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
-    });
-    var obs=new IntersectionObserver(function(entries){
-      entries.forEach(function(e,i){
-        if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+    window.addEventListener('load', function() {
+  var vh=window.innerHeight;
+      document.querySelectorAll('.reveal').forEach(function(el){
+        if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
       });
-    },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
-    document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(e,i){
+          if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);obs.unobserve(e.target);}
+        });
+      },{threshold:.05,rootMargin:'0px 0px -40px 0px'});
+      document.querySelectorAll('.reveal:not(.in)').forEach(function(el){obs.observe(el);});
+  });
   });
   var form=document.getElementById('contactForm');
   if(form){
@@ -285,12 +287,6 @@
       var action=form.getAttribute('action');
       var success=document.getElementById('formSuccess');
       if(action.indexOf('YOUR_FORM_ID')!==-1){success.style.display='block';form.reset();return;}
-      fetch(action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
-        .then(function(r){if(r.ok){success.style.display='block';form.reset();}})
-        .catch(function(err){console.error(err);});
-    });
-  }
-})();
-</script>
+      fetch(action,{method:'
 </body>
 </html>
