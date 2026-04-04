@@ -40,8 +40,8 @@
     .section--gray{background:var(--bg2);}
     a{color:inherit;text-decoration:none;}
     img{display:block;max-width:100%;}
-    .reveal{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
-    .reveal.in{opacity:1;transform:none;}
+    .js-ready .reveal{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
+    .js-ready .reveal.in{opacity:1;transform:none;}
     .label{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:10px;margin-bottom:14px;}
     .label::before{content:'';width:24px;height:2px;background:var(--blue);flex-shrink:0;}
     .h2{font-family:var(--font-h);font-size:clamp(2rem,3.8vw,3rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:18px;}
@@ -168,7 +168,7 @@
       <div class="overview-left reveal">
         <div class="label">Overview</div>
         <h2>Layered Security That Stops Threats Before They Reach You.</h2>
-        <p>The most damaging cyberattacks move quietly through networks for days or weeks before striking. A single antivirus solution is not enough.</p><p>We deploy a multi-layered stack covering endpoints, email, and network — combining Huntress for managed detection and response, SentinelOne for AI-driven endpoint protection, Guardz for unified cyber protection, and EasyDMARC for email security.</p><p>When a threat is detected, we act immediately. Not after a ticket is filed. Not the next business day.</p>
+        <p>The most damaging cyberattacks move quietly through networks for days or weeks before striking. A single antivirus solution is not enough.</p><p>We deploy a multi-layered stack covering endpoints, email, and network — combining Huntress for managed detection and response, SentinelOne for AI-driven endpoint protection, and EasyDMARC for email security.</p><p>When a threat is detected, we act immediately. Not after a ticket is filed. Not the next business day.</p>
       </div>
       <div class="reveal">
         <div class="plan-card">
@@ -189,7 +189,7 @@
     <h2 class="h2 reveal" style="max-width:540px;">Everything Covered Under This Service.</h2>
     <div class="includes-list"><div class="include-row reveal"><div class="include-num">01</div><div class="include-content"><h4>Huntress Managed Detection and Response</h4><p>Huntress monitors your endpoints and Microsoft 365 for persistent footholds, lateral movement, and attacker behavior that standard tools miss.</p></div></div>
 <div class="include-row reveal"><div class="include-num">02</div><div class="include-content"><h4>SentinelOne Endpoint Protection</h4><p>AI-driven protection that identifies and contains threats in real time including ransomware, fileless attacks, and zero-day exploits.</p></div></div>
-<div class="include-row reveal"><div class="include-num">03</div><div class="include-content"><h4>Guardz</h4><p>Unified cybersecurity platform providing real-time threat detection, phishing simulation, dark web monitoring, and insurance-backed cyber protection for your business.</p></div></div>
+<div class="include-row reveal"><div class="include-num">03</div><div class="include-content"><h4>Sophos Firewall and Network Security</h4><p>Next-generation firewall with deep packet inspection, intrusion prevention, and web filtering to stop threats at the network perimeter.</p></div></div>
 <div class="include-row reveal"><div class="include-num">04</div><div class="include-content"><h4>EasyDMARC Email Security</h4><p>DMARC, DKIM, and SPF configuration and monitoring to prevent email spoofing and phishing attacks.</p></div></div>
 <div class="include-row reveal"><div class="include-num">05</div><div class="include-content"><h4>Vulnerability Scanning</h4><p>Regular scans to identify misconfigurations, unpatched systems, and exposure before attackers find them.</p></div></div>
 <div class="include-row reveal"><div class="include-num">06</div><div class="include-content"><h4>Quarterly Security Reviews</h4><p>A structured review of your security posture every quarter with threat intelligence relevant to your industry.</p></div></div>
@@ -243,7 +243,7 @@
       </ul></div>
       <div class="footer-col"><h5>Contact</h5><ul>
         <li><a href="tel:+13039709081">(303) 970-9081</a></li>
-        <li><a href="/cdn-cgi/l/email-protection#aeddcfc2cbddeedecfc2c8c1dcc9cbc7da80cdc1c3"><span class="__cf_email__" data-cfemail="eb988a878e98ab9b8a878d84998c8e829fc5888486">[email&#160;protected]</span></a></li>
+        <li><a href="mailto:sales@palforgeit.com">sales@palforgeit.com</a></li>
         <li><span style="font-size:.85rem;color:rgba(255,255,255,.35);">Denver, Colorado</span></li>
       </ul></div>
     </div>
@@ -258,7 +258,7 @@
     </div>
   </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function(){
   var nav=document.getElementById('nav');
   if(nav) window.addEventListener('scroll',function(){nav.classList.toggle('nav--scrolled',window.scrollY>20);});
@@ -266,7 +266,8 @@
   if(mt) mt.addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('open');});
   window.closeMobile=function(){var m=document.getElementById('mobileMenu');if(m)m.classList.remove('open');};
   window.addEventListener('load', function() {
-  var vh=window.innerHeight;
+  document.body.classList.add('js-ready');
+    var vh=window.innerHeight;
     document.querySelectorAll('.reveal').forEach(function(el){
       if(el.getBoundingClientRect().top<vh-40){el.classList.add('in');}
     });
@@ -284,4 +285,12 @@
       var action=form.getAttribute('action');
       var success=document.getElementById('formSuccess');
       if(action.indexOf('YOUR_FORM_ID')!==-1){success.style.display='block';form.reset();return;}
-      fetch(action,{method:'
+      fetch(action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
+        .then(function(r){if(r.ok){success.style.display='block';form.reset();}})
+        .catch(function(err){console.error(err);});
+    });
+  }
+})();
+</script>
+</body>
+</html>
