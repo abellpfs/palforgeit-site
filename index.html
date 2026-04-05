@@ -734,25 +734,28 @@
         if (btn) { btn.textContent = 'Sending...'; btn.disabled = true; }
         var data = {};
         new FormData(form).forEach(function(v, k) { data[k] = v; });
-        fetch(form.getAttribute('action'), {
-          method: 'POST',
-          body: JSON.stringify(data),
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
-        })
-        .then(function() {
-          // Build prefill params for Calendly on the thank-you page
-          var name  = ((data.firstName || '') + ' ' + (data.lastName || '')).trim();
-          var email = data.email || '';
-          var phone = data.phone || '';
-          var q = '?name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email);
-          if (phone) q += '&a1=' + encodeURIComponent(phone);
-          window.location.href = 'thank-you.html' + q;
-        })
-        .catch(function() {
-          var name  = ((data.firstName || '') + ' ' + (data.lastName || '')).trim();
-          var email = data.email || '';
-          window.location.href = 'thank-you.html?name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email);
-        });
+
+        // Build thank-you redirect URL with Calendly prefill params
+        var name  = ((data.firstName || '') + ' ' + (data.lastName || '')).trim();
+        var email = data.email || '';
+        var phone = data.phone || '';
+        var q = '?name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email);
+        if (phone) q += '&a1=' + encodeURIComponent(phone);
+        var redirectUrl = 'thank-you.html' + q;
+
+        // Fire webhook in background — don't wait for response before redirecting
+        // This prevents the browser from navigating to the webhook URL if fetch fails
+        try {
+          fetch(form.getAttribute('action'), {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            keepalive: true
+          }).catch(function() { /* silent — redirect already happened */ });
+        } catch(err) { /* silent */ }
+
+        // Redirect immediately regardless of webhook status
+        window.location.href = redirectUrl;
         return;
         var action = form.getAttribute('action');
         var success = document.getElementById('formSuccess');
