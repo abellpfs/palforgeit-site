@@ -167,10 +167,14 @@
   <div class="container">
     <div class="label" style="justify-content:center;margin-bottom:12px;">Book Now</div>
     <h2 class="h2" style="text-align:center;margin-bottom:12px;">Skip the Wait. <em>Pick a Time That Works.</em></h2>
-    <p class="lead" style="text-align:center;max-width:480px;margin:0 auto 40px;">30 minutes. No preparation needed. Just a straight conversation about your IT.</p>
+    <p class="lead" style="text-align:center;max-width:480px;margin:0 auto 16px;">30 minutes. No preparation needed. Just a straight conversation about your IT.</p>
+    <p style="text-align:center;font-size:0.8rem;color:var(--muted);max-width:420px;margin:0 auto 40px;line-height:1.6;">
+      <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display:inline-block;vertical-align:middle;margin-right:4px;"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      Your information is kept strictly confidential. We will never sell, rent, or share your data with anyone. Ever.
+    </p>
     <div class="calendly-wrap">
-      <div class="calendly-inline-widget"
-        data-url="https://calendly.com/palforgeit?hide_gdpr_banner=1&primary_color=114EA1"
+      <div class="calendly-inline-widget" id="calendlyWidget"
+        data-url="https://calendly.com/palforgeit/30-minute-discovery-call?hide_gdpr_banner=1&primary_color=114EA1"
         style="min-width:320px;height:700px;">
       </div>
     </div>
@@ -204,7 +208,7 @@
       </ul></div>
       <div class="footer-col"><h5>Contact</h5><ul>
         <li><a href="tel:+13039709081">(303) 970-9081</a></li>
-        <li><a href="/cdn-cgi/l/email-protection#c2b1a3aea7b182b2a3aea4adb0a5a7abb6eca1adaf"><span class="__cf_email__" data-cfemail="9eedfff2fbeddeeefff2f8f1ecf9fbf7eab0fdf1f3">[email&#160;protected]</span></a></li>
+        <li><a href="/cdn-cgi/l/email-protection#5c2f3d30392f1c2c3d303a332e3b393528723f3331"><span class="__cf_email__" data-cfemail="6013010c05132010010c060f12070509144e030f0d">[email&#160;protected]</span></a></li>
         <li><span style="font-size:.85rem;color:rgba(255,255,255,.35);">Denver, Colorado</span></li>
       </ul></div>
     </div>
@@ -220,6 +224,25 @@
   </div>
 </footer>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+// Read prefill data passed from the contact form via URL params
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var name  = params.get('name')  || '';
+  var email = params.get('email') || '';
+  var phone = params.get('a1')    || ''; // Calendly custom answer param
+
+  if (name || email) {
+    var base = 'https://calendly.com/palforgeit/30-minute-discovery-call';
+    var q = '?hide_gdpr_banner=1&primary_color=114EA1';
+    if (name)  q += '&name='  + encodeURIComponent(name);
+    if (email) q += '&email=' + encodeURIComponent(email);
+    if (phone) q += '&a1='   + encodeURIComponent(phone);
+    var widget = document.getElementById('calendlyWidget');
+    if (widget) widget.setAttribute('data-url', base + q);
+  }
+})();
+</script>
 <script>
 (function(){
   var nav=document.getElementById('nav');
