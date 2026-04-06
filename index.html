@@ -726,7 +726,8 @@
   });
     });
   });
-    var form = document.getElementById('contactForm');
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('contactForm');
     if (form) {
       form.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -755,9 +756,10 @@
 
         // Redirect immediately
         window.location.href = 'thank-you.html' + q;
-        return;
-        var action = form.getAttribute('action');
-        var success = document.getElementById('formSuccess');
-        if (action.indexOf('YOUR_FORM
+        });
+      }
+    });
+  })();
+</script>
 </body>
 </html>
