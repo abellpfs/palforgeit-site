@@ -605,7 +605,7 @@
       </div>
       <div class="reveal">
         <div class="contact-form-card">
-          <form id="contactForm" action="https://auto.palforge.it/webhook/website-lead" method="POST">
+          <form id="contactForm" data-webhook="https://auto.palforge.it/webhook/website-lead">
             <div class="form-row">
               <div class="field"><label>First Name</label><input type="text" name="firstName" placeholder="John" required /></div>
               <div class="field"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith" required /></div>
@@ -741,21 +741,20 @@
         var phone = data.phone || '';
         var q = '?name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email);
         if (phone) q += '&a1=' + encodeURIComponent(phone);
-        var redirectUrl = 'thank-you.html' + q;
 
-        // Fire webhook in background — don't wait for response before redirecting
-        // This prevents the browser from navigating to the webhook URL if fetch fails
-        try {
-          fetch(form.getAttribute('action'), {
+        // Fire webhook in background — never let browser navigate to it
+        var webhookUrl = form.getAttribute('data-webhook');
+        if (webhookUrl) {
+          fetch(webhookUrl, {
             method: 'POST',
             body: JSON.stringify(data),
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            headers: { 'Content-Type': 'application/json' },
             keepalive: true
-          }).catch(function() { /* silent — redirect already happened */ });
-        } catch(err) { /* silent */ }
+          }).catch(function() {});
+        }
 
-        // Redirect immediately regardless of webhook status
-        window.location.href = redirectUrl;
+        // Redirect immediately
+        window.location.href = 'thank-you.html' + q;
         return;
         var action = form.getAttribute('action');
         var success = document.getElementById('formSuccess');
